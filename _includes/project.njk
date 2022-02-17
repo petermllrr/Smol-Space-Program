@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "head.njk" %}
+<body>
+<main>
+<p><a href="/">◀ Home</a>
+{{ content | safe -}}
+<nav>
+<h2>Projects</h2>
+{% for project in collections.project -%}
+<p><a href="{{ project.url }}">{{ project.data.title }}</a></p>
+{%- endfor %}
+</nav>
+</main>
+</body>
+</html>

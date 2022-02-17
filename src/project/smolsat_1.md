@@ -7,7 +7,7 @@ description: A super cute, solar-powered mini-satellite.
 
 # SMOLSAT-1 ready for launch
 
-My first ever 
+The first member of the Smol Space Program 🪐✨. More pics coming soon!
 
 <a href="/images/smolsat_1/PXL_20220212_142420014.PORTRAIT.webp">
 <picture>

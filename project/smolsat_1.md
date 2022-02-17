@@ -11,11 +11,13 @@ My first ever
 
 <a href="/images/smolsat_1/PXL_20220212_142420014.PORTRAIT.webp">
 <picture>
-<source srcset="/images/smolsat_1/PXL_20220212_142420014.PORTRAIT.avif 2100w"
+<source srcset="/images/smolsat_1/PXL_20220212_142420014.PORTRAIT.avif 2800w"
         type="image/avif">
-<source srcset="/images/smolsat_1/PXL_20220212_142420014.PORTRAIT.webp 2100w"
+<source srcset="/images/smolsat_1/PXL_20220212_142420014.PORTRAIT.webp 2800w"
         type="image/webp">
 <img src="/images/smolsat_1/PXL_20220212_142420014.PORTRAIT.webp"
-     alt="Portrait of a tiny satellite made of brass and electronics">
+     alt="Portrait of a tiny satellite made of brass and electronics"
+     height="2100"
+     width="2800">
 </picture>
 </a>

@@ -5,19 +5,9 @@ title: SMOLSAT-1
 description: A super cute, solar-powered mini-satellite.
 ---
 
-# SMOLSAT-1 ready for launch
+# SMOLSAT-1
 
 The first member of the Smol Space Program 🪐✨. More pics coming soon!
 
-<a href="/images/smolsat_1/PXL_20220212_142420014.PORTRAIT.webp">
-<picture>
-<source srcset="/images/smolsat_1/PXL_20220212_142420014.PORTRAIT.avif 2800w"
-        type="image/avif">
-<source srcset="/images/smolsat_1/PXL_20220212_142420014.PORTRAIT.webp 2800w"
-        type="image/webp">
-<img src="/images/smolsat_1/PXL_20220212_142420014.PORTRAIT.webp"
-     alt="Portrait of a tiny satellite made of brass and electronics"
-     height="2100"
-     width="2800">
-</picture>
-</a>
+{% assign widths = "640, 800, 1000, 1280, 1920" | split: ',' -%}
+{% image "images/smolsat_1/PXL_20220212_142420014.PORTRAIT.webp", "Portrait of a tiny satellite made of brass and electronics", widths, "(max-width: 639px) 100vw, (min-width: 640px) 640px" %}

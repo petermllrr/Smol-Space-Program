@@ -3,8 +3,26 @@
 {% include "head.njk" %}
 <body>
 <main>
-<p><a href="/">◀ Home</a>
-{{ content | safe -}}
+<nav>
+  <a href="/">◀ Home</a>
+</nav>
+{{ content | safe }}
+<h2>Gallery 1</h2>
+{% for img in collections.smolsat_1_gallery_1 -%}
+{% image img.url,
+         img.alt,
+         [640, 800, 1000, 1280, 1920],
+         "(max-width: 639px) 100vw,
+          (min-width: 640px) 640px" %}
+{% endfor -%}
+<h2>Gallery 2</h2>
+{% for img in collections.smolsat_1_gallery_2 -%}
+{% image img.url,
+         img.alt,
+         [640, 800, 1000, 1280, 1920],
+         "(max-width: 639px) 100vw,
+          (min-width: 640px) 640px" %}
+{% endfor -%}
 <nav>
 <h2>Projects</h2>
 {% for project in collections.project -%}

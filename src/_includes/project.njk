@@ -7,27 +7,25 @@
   <a href="/">◀ Home</a>
 </nav>
 {{ content | safe }}
-<h2>Gallery 1</h2>
-{% for img in collections.smolsat_1_gallery_1 -%}
+{% if gallery -%}
+<h2>Gallery</h2>
+<section class="gallery">
+{% for img in collections[gallery] -%}
 {% image img.url,
          img.alt,
-         [640, 800, 1000, 1280, 1920],
-         "(max-width: 639px) 100vw,
-          (min-width: 640px) 640px" %}
+         [250, 450, 650, 800, 1000, 1280, 1920],
+         "(max-width: 639px) calc(100vw / 3 - 2em),
+          (min-width: 640px) 203px" %}
 {% endfor -%}
-<h2>Gallery 2</h2>
-{% for img in collections.smolsat_1_gallery_2 -%}
-{% image img.url,
-         img.alt,
-         [640, 800, 1000, 1280, 1920],
-         "(max-width: 639px) 100vw,
-          (min-width: 640px) 640px" %}
-{% endfor -%}
+{% endif -%}
+</section>
 <nav>
-<h2>Projects</h2>
+<h2>Other projects</h2>
 {% for project in collections.project -%}
+{% if project.data.title != title -%}
 <p><a href="{{ project.url }}">{{ project.data.title }}</a></p>
-{%- endfor %}
+{% endif -%}
+{% endfor -%}
 </nav>
 </main>
 </body>

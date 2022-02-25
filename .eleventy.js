@@ -80,12 +80,12 @@ function getFiles(directory, fileTypes, result = []) {
 }
 
 /**
- * Returns the gallery folder name from a given file path.
+ * Returns the 3rd parth of a path. for/example/THIS/part.
  * 
  * @param   {String} filepath an absolute file path
  * @returns {String} the gallery"s folder name
  */
-function getCollectionName(filepath) {
+function getThirdPathSegment(filepath) {
   return filepath.split("/")[2];
 }
 
@@ -96,7 +96,7 @@ function getCollectionName(filepath) {
  * @returns {String} the file path without the input directory
  */
 function removeInputDirFromPath(file) {
-  return file.replace(INPUTDIR, "");
+  return file.replace(INPUTDIR + "/", "");
 }
 
 /**
@@ -122,7 +122,7 @@ function addAltTextData(altTexts, altTextFiles) {
  */
 function addCollectionNames(collections, imageFiles) {
   for (const file of imageFiles) {
-    const collectionName = getCollectionName(file);
+    const collectionName = getThirdPathSegment(file);
     collections.add(collectionName);
   }
 }
@@ -143,7 +143,7 @@ function generateCollections(collections,
     eleventyConfig.addCollection(collection, function (collectionApi) {
       let result = [];
       for (const file of imageFiles) {
-        if (getCollectionName(file) == collection) {
+        if (getThirdPathSegment(file) == collection) {
           const filename = path.basename(file);
           const url = removeInputDirFromPath(file);
           let alttext = "";
@@ -181,11 +181,13 @@ async function imageShortcode(src, alt, widths, sizes = "100vw") {
     throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
   }
 
-  let metadata = await Image(INPUTDIR + "/" + src, {
+  src = INPUTDIR + "/" + src;
+
+  let metadata = await Image( src, {
     widths: widths,
     formats: ["webp", "avif"],
-    outputDir: "./_site/images/" + getCollectionName(src),
-    urlPath: "/images/" + getCollectionName(src)
+    outputDir: "./_site/images/" + getThirdPathSegment(src),
+    urlPath: "/images/" + getThirdPathSegment(src)
   });
 
   let lowsrc = metadata.webp[0];

@@ -15,8 +15,8 @@
 main {
   margin: 0 auto;
   max-width: 40em;
-  padding-top: 2em;
-  padding-bottom: 10em;
+  padding-block-start: 2em;
+  padding-block-end: 10em;
 }
 
 figure {
@@ -27,7 +27,13 @@ figcaption {
   display: none;
 }
 
+picture {
+  display: block;
+  margin-block-end: 1em;
+}
+
 img {
+  border-radius: 0.25em;
   height: auto;
   width: 100%;
 }
@@ -50,4 +56,14 @@ h2 {
 
 p {
   line-height: 1.4;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: .5em;
+}
+
+.gallery picture {
+  margin-block-end: -.25em;
 }

@@ -187,7 +187,7 @@ async function imageShortcode(src, alt, widths, sizes = "100vw") {
 
   let metadata = await Image( src, {
     widths: widths,
-    formats: ["webp", "avif"],
+    formats: ["avif", "webp"],
     outputDir: "./_site/images/" + getThirdPathSegment(src),
     urlPath: "/images/" + getThirdPathSegment(src)
   });

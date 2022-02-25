@@ -177,6 +177,8 @@ function generateCollections(collections,
  * @returns 
  */
 async function imageShortcode(src, alt, widths, sizes = "100vw") {
+  console.log("Processing " + src);
+  
   if(alt === undefined) {
     throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
   }

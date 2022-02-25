@@ -10,5 +10,5 @@ gallery: smolsat_1_gallery
 
 The first member of the Smol Space Program 🪐✨.
 
-{% assign widths = "640, 800, 1000, 1280, 1920" | split: ',' -%}
+{% assign widths = "640, 1280, 4032" | split: ',' -%}
 {% image "images/smolsat_1/PXL_20220212_142420014.PORTRAIT.jpg", "SMOLSAT-1 completely assembled", widths, "(max-width: 639px) 100vw, (min-width: 640px) 640px" %}

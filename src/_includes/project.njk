@@ -13,8 +13,8 @@
 {% for img in collections[gallery] -%}
 {% image img.url,
          img.alt,
-         [250, 450, 650, 800, 1000, 1280, 1920],
-         "(max-width: 639px) calc(100vw / 3 - 2em),
+         [250, 450, 4032],
+         "(max-width: 639px) calc((100vw / 3) - 2em -16px),
           (min-width: 640px) 203px" %}
 {% endfor -%}
 {% endif -%}

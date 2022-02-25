@@ -3,8 +3,8 @@
 {% include "head.njk" %}
 <body>
 <main>
-<nav>
-  <a href="/">◀ Home</a>
+<nav class="menu">
+  <span role="presentation">◀ </span><a href="/">Home</a>
 </nav>
 {{ content | safe }}
 {% if gallery -%}
@@ -19,6 +19,7 @@
 {% endfor -%}
 {% endif -%}
 </section>
+<p>Published on: {% publishedDate %}</p>
 <nav>
 <h2>Other projects</h2>
 {% for project in collections.project -%}

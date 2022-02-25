@@ -36,8 +36,6 @@ __)|   /--\\__|__
 
 # Smol Space Program
 
-## 🪐 What's this?
-
 I build small, cute spacecraft from microelectronics, wire and lots of solder.
 These models are mostly useless, but nice to look at. On this page I upload
 pictures and build reports.
@@ -54,4 +52,4 @@ pictures and build reports.
 
 [GitHub](https://github.com/petermllrr/Smol-Space-Program)
 
-Last updated: February 17th, 2022
+Last updated: {% todaysDate %}

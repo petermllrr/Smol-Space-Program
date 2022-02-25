@@ -11,6 +11,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
+  eleventyConfig.addNunjucksShortcode("todaysDate", todayShortcode);
+  eleventyConfig.addLiquidShortcode("todaysDate", todayShortcode);
+  eleventyConfig.addJavaScriptFunction("todaysDate", todayShortcode);
+  eleventyConfig.addNunjucksShortcode("publishedDate", publishedDateShortCode);
+  eleventyConfig.addLiquidShortcode("publishedDate", publishedDateShortCode);
+  eleventyConfig.addJavaScriptFunction("publishedDate", publishedDateShortCode);
 
   eleventyConfig.addPassthroughCopy(INPUTDIR + "/favicon-32x32.png");
   eleventyConfig.addPassthroughCopy(INPUTDIR + "/css");
@@ -208,4 +214,29 @@ ${Object.values(metadata).map(imageFormat => {
        decoding="async">
 </picture>
 </a>`;
+}
+
+function todayShortcode() {
+  const now = new Date(Date.now());
+  const date = this.page.date;
+  const year = now.getFullYear();
+  const monthLong = new Intl.DateTimeFormat("en-US", { month : "long"})
+    .format(now);
+  const monthShort = new Intl.DateTimeFormat("en-US", { month : "2-digit"})
+    .format(now);
+  const day = new Intl.DateTimeFormat("en-US", { day : "2-digit"})
+    .format(now);
+  return `<time datetime="${year}-${monthShort}-${day}">${monthLong} ${day}, ${year}</time>`;
+}
+
+function publishedDateShortCode() {
+  const date = this.page.date;
+  const year = date.getFullYear();
+  const monthLong = new Intl.DateTimeFormat("en-US", { month : "long"})
+    .format(date);
+  const monthShort = new Intl.DateTimeFormat("en-US", { month : "2-digit"})
+    .format(date);
+  const day = new Intl.DateTimeFormat("en-US", { day : "2-digit"})
+    .format(date);
+  return `<time datetime="${year}-${monthShort}-${day}">${monthLong} ${day}, ${year}</time>`;
 }

@@ -4,6 +4,7 @@ layout: project
 title: SMOLSAT-1
 description: A super cute, solar-powered mini-satellite.
 gallery: smolsat_1_gallery
+date: 2022-02-05
 ---
 
 # SMOLSAT-1

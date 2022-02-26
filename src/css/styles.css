@@ -1,20 +1,50 @@
 :root {
-  background-color: #0c0e1d;
-  color: #aaffff;
-  color-scheme: dark;
-  font-family: "SF Mono",
-    ui-monospace,
-    Monaco,
-    "Roboto Mono",
-    Consolas,
-    "Liberation Mono",
-    "DejaVu Sans Mono",
-    monospace;
+  font-family: ui-monospace,
+               "SF Mono",
+               Monaco,
+               "Roboto Mono",
+               Consolas,
+               "Liberation Mono",
+               "DejaVu Sans Mono",
+               monospace;
+  font-size: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    background-color: #181c2b;
+    color: #aaffff;
+    color-scheme: dark;
+  }
+
+  a {
+    color: #aaffff;
+  }
+
+  a:hover {
+    color: White;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: #f5f5f5;
+    color: #4f3fdb;
+    color-scheme: light;
+  }
+
+  a {
+    color: #4f3fdb;
+  }
+
+  a:hover {
+    color: #8579f1;
+  }
 }
 
 main {
   margin: 0 auto;
-  max-width: 40em;
+  max-width: 640px;
   padding-block-start: 2em;
   padding-block-end: 10em;
 }
@@ -27,23 +57,19 @@ figcaption {
   display: none;
 }
 
+img {
+  border-radius: 1em;
+  height: auto;
+  width: 100%;
+}
+
 picture {
   display: block;
   margin-block-end: 1em;
 }
 
-img {
-  border-radius: 0.25em;
-  height: auto;
-  width: 100%;
-}
-
-a {
-  color: #AAFFFF;
-}
-
-a:hover {
-  color: White;
+pre {
+  font-weight: bold;
 }
 
 h1 {
@@ -66,4 +92,8 @@ p {
 
 .gallery picture {
   margin-block-end: -.25em;
+}
+
+.gallery img {
+  border-radius: 0.2em;
 }

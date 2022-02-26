@@ -1,4 +1,6 @@
 .DS_store
 node_modules
-_site
 .vscode
+
+_site/*
+!_site/images

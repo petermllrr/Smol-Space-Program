@@ -7,7 +7,12 @@
                "Liberation Mono",
                "DejaVu Sans Mono",
                monospace;
-  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  :root {
+    font-size: 14px;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -69,6 +74,7 @@ picture {
 }
 
 pre {
+  font-size: 13px;
   font-weight: bold;
 }
 

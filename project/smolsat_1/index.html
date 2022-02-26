@@ -17,7 +17,7 @@
   <span role="presentation">◀ </span><a href="/">Home</a>
 </nav>
 <h1>SMOLSAT-1</h1>
-<p>The first member of the Smol Space Program 🪐✨.</p>
+<p>Peter Müller, <time datetime="2022-02-05">February 05, 2022</time></p>
 <a href="/images/smolsat_1/D7YJf6M763-4032.webp">
 <picture>
   <source type="image/avif" srcset="/images/smolsat_1/D7YJf6M763-640.avif 640w, /images/smolsat_1/D7YJf6M763-1280.avif 1280w, /images/smolsat_1/D7YJf6M763-4032.avif 4032w" sizes="(max-width: 639px) 100vw, (min-width: 640px) 640px">
@@ -30,6 +30,39 @@
        decoding="async">
 </picture>
 </a>
+<p>The first member of the Smol Space Program 🪐✨. It's a simple LED pummer, which
+charges a capacitor via two solar cells and flashes an LED when enough voltage
+is applied. The original idea comes from Mohid Bhoite's Tiny Cube Sat.</p>
+<p>Smolsat-1 is controlled by an ATtiny85 microcontroller. Its only task is to let
+the LED slowly fade. When the LED is not active, the ATtiny switches to sleep
+mode. Looking back, a voltage control would make more sense, so that the
+microcontroller waits until there is enough voltage stored in the capacitor. But
+since this was my first model, I am already satisfied.</p>
+<p>Optical highlight are the beautiful solar cells from Anysolar. These cells are
+monocrystalline cells, which are separated from each other by fine metal struts.
+They look almost like real solar cells.</p>
+<p>The model is held together by 1.2 mm and 0.8 mm brass wire and stands
+on a 26 mm thick and 80 mm walnut wood base.</p>
+<h2>Schematics</h2>
+<p><a href="/images/smolsat_1/bDz0-ZeakT-1000.svg"><img alt="Wiring layout" loading="lazy" decoding="async" src="/images/smolsat_1/bDz0-ZeakT-1000.svg" width="1000" height="344"></a></p>
+<a href="/images/smolsat_1/NxmAKkijNc-3066.webp">
+<picture>
+  <source type="image/avif" srcset="/images/smolsat_1/NxmAKkijNc-640.avif 640w, /images/smolsat_1/NxmAKkijNc-1280.avif 1280w, /images/smolsat_1/NxmAKkijNc-3066.avif 3066w" sizes="(max-width: 639px) 100vw, (min-width: 640px) 640px">
+  <source type="image/webp" srcset="/images/smolsat_1/NxmAKkijNc-640.webp 640w, /images/smolsat_1/NxmAKkijNc-1280.webp 1280w, /images/smolsat_1/NxmAKkijNc-3066.webp 3066w" sizes="(max-width: 639px) 100vw, (min-width: 640px) 640px">
+  <img src="/images/smolsat_1/NxmAKkijNc-640.webp"
+       width="3066"
+       height="1954"
+       alt="Schematics"
+       loading="lazy"
+       decoding="async">
+</picture>
+</a>
+<h2>Code</h2>
+<script src="https://gist.github.com/petermllrr/0dab23f958eaba381c769f051721ce3e.js"></script>
+<h2>Links</h2>
+<p><a href="https://www.bhoite.com/sculptures/tiny-cube-sat/">Mohid Bhoite's Tiny Cube Sat</a></p>
+<p><a href="https://www.digikey.de/en/products/detail/anysolar-ltd/SM111K06L/9990436">IXYS solar cells</a></p>
+
 <h2>Gallery</h2>
 <section class="gallery">
 <a href="/images/smolsat_1_gallery/OkxSwW0Wlo-4032.webp">
@@ -411,7 +444,6 @@
 </picture>
 </a>
 </section>
-<p>Published on: <time datetime="2022-02-05">February 05, 2022</time></p>
 <nav>
 <h2>Other projects</h2>
 </nav>

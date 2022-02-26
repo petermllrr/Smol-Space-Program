@@ -48,8 +48,10 @@ pictures and build reports.
 
 ## 👩‍🚀 Author
 
-[Peter Müller](https://www.petermueller.io)
+Peter Müller ([Web][1], [Twitter][2])
 
-[GitHub](https://github.com/petermllrr/Smol-Space-Program)
+Last updated: {% date "today" %} ([GitHub][3])
 
-Last updated: {% todaysDate %}
+[1]: https://www.petermueller.io
+[2]: https://twitter.com/petermllrr
+[3]: https://github.com/petermllrr/Smol-Space-Program

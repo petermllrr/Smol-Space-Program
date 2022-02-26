@@ -11,13 +11,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
-  eleventyConfig.addNunjucksShortcode("todaysDate", todayShortcode);
-  eleventyConfig.addLiquidShortcode("todaysDate", todayShortcode);
-  eleventyConfig.addJavaScriptFunction("todaysDate", todayShortcode);
-  eleventyConfig.addNunjucksShortcode("publishedDate", publishedDateShortCode);
-  eleventyConfig.addLiquidShortcode("publishedDate", publishedDateShortCode);
-  eleventyConfig.addJavaScriptFunction("publishedDate", publishedDateShortCode);
-
+  eleventyConfig.addNunjucksShortcode("date", dateShortcode);
+  eleventyConfig.addLiquidShortcode("date", dateShortcode);
+  eleventyConfig.addJavaScriptFunction("date", dateShortcode);
+  eleventyConfig.addNunjucksAsyncShortcode("svg", svgShortcode);
+  eleventyConfig.addLiquidShortcode("svg", svgShortcode);
+  eleventyConfig.addJavaScriptFunction("svg", svgShortcode)
+  
   eleventyConfig.addPassthroughCopy(INPUTDIR + "/favicon-32x32.png");
   eleventyConfig.addPassthroughCopy(INPUTDIR + "/css");
 
@@ -216,21 +216,44 @@ ${Object.values(metadata).map(imageFormat => {
 </a>`;
 }
 
-function todayShortcode() {
-  const now = new Date(Date.now());
-  const date = this.page.date;
-  const year = now.getFullYear();
-  const monthLong = new Intl.DateTimeFormat("en-US", { month : "long"})
-    .format(now);
-  const monthShort = new Intl.DateTimeFormat("en-US", { month : "2-digit"})
-    .format(now);
-  const day = new Intl.DateTimeFormat("en-US", { day : "2-digit"})
-    .format(now);
-  return `<time datetime="${year}-${monthShort}-${day}">${monthLong} ${day}, ${year}</time>`;
+async function svgShortcode(src, alt, sizes = "100vw") {
+  console.log("Processing " + src);
+  
+  if(alt === undefined) {
+    throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
+  }
+
+  src = INPUTDIR + "/" + src;
+
+  let metadata = await Image( src, {
+    formats: ["svg"],
+    outputDir: "./_site/images/" + getThirdPathSegment(src),
+    urlPath: "/images/" + getThirdPathSegment(src)
+  });
+
+  let imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+  };
+
+  return `<a href="${metadata.svg[0].url}">${Image.generateHTML(metadata, imageAttributes)}</a>`;
 }
 
-function publishedDateShortCode() {
-  const date = this.page.date;
+/**
+ * Prints a page's date.
+ * 
+ * @param {String} date (optional) pass "today" to print the current date
+ *                      instead of the page's metadata date.
+ * @returns             an HTML <time datetime=""> tag
+ */
+function dateShortcode(date) {
+  if (date === "today") {
+    date = new Date(Date.now());
+  } else {
+    date = this.page.date;
+  }
   const year = date.getFullYear();
   const monthLong = new Intl.DateTimeFormat("en-US", { month : "long"})
     .format(date);

@@ -6,6 +6,8 @@
 <nav class="menu">
   <span role="presentation">◀ </span><a href="/">Home</a>
 </nav>
+<h1>{{title}}</h1>
+<p>Peter Müller, {% date %}</p>
 {{ content | safe }}
 {% if gallery -%}
 <h2>Gallery</h2>
@@ -19,7 +21,6 @@
 {% endfor -%}
 {% endif -%}
 </section>
-<p>Published on: {% publishedDate %}</p>
 <nav>
 <h2>Other projects</h2>
 {% for project in collections.project -%}

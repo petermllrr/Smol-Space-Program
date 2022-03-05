@@ -1,15 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A super cute, solar-powered mini-satellite.">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f5" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0c0e1d" />
-  <link rel="icon" href="/favicon-32x32.png" type="image/png">
-  <link rel="stylesheet" href="/css/styles.css">
-  <title>SMOLSAT-1</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A super cute, solar-powered mini-satellite.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#e5e1dd" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#292c3b" />
+<link rel="icon" href="/favicon-32x32.png" type="image/png">
+<style>
+html {
+  font-family: ui-monospace,
+               "SF Mono",
+               Monaco,
+               "Roboto Mono",
+               Consolas,
+               "Liberation Mono",
+               "DejaVu Sans Mono",
+               monospace;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14.5px;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    background-color: #e5e1dd;
+    color: #231d61;
+    color-scheme: light;
+  }
+
+  a, pre {
+    color: #124cf3;
+  }
+
+  a:hover {
+    color: #577cee;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #292c3b;
+    color: #e4f6fc;
+    color-scheme: dark;
+  }
+
+  a, pre {
+    color: #4fbcff;
+  }
+
+  a:hover {
+    color: White;
+  }
+}
+
+main {
+  margin: 0 auto;
+  max-width: 640px;
+  padding-block-start: 2em;
+  padding-block-end: 10em;
+}
+
+h1 {
+  margin-block-start: 1.3em;
+}
+
+h2 {
+  margin-block-start: 1.83em;
+}
+
+p {
+  line-height: 1.4;
+}
+img {
+  border-radius: 1em;
+  height: auto;
+  width: 100%;
+}
+
+picture {
+  display: block;
+  margin-block-end: 1em;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: .5em;
+}
+
+.gallery picture {
+  margin-block-end: -.25em;
+}
+
+.gallery img {
+  border-radius: 0.2em;
+}
+</style>
+<title>SMOLSAT-1</title>
 </head>
 <body>
 <main>
@@ -30,19 +122,25 @@
        decoding="async">
 </picture>
 </a>
-<p>The first member of the Smol Space Program 🪐✨. It's a simple LED pummer, which
-charges a capacitor via two solar cells and flashes an LED when enough voltage
-is applied. The original idea comes from Mohid Bhoite's Tiny Cube Sat.</p>
-<p>Smolsat-1 is controlled by an ATtiny85 microcontroller. Its only task is to let
-the LED slowly fade. When the LED is not active, the ATtiny switches to sleep
-mode. Looking back, a voltage control would make more sense, so that the
-microcontroller waits until there is enough voltage stored in the capacitor. But
-since this was my first model, I am already satisfied.</p>
-<p>Optical highlight are the beautiful solar cells from Anysolar. These cells are
-monocrystalline cells, which are separated from each other by fine metal struts.
-They look almost like real solar cells.</p>
-<p>The model is held together by 1.2 mm and 0.8 mm brass wire and stands
-on a 26 mm thick and 80 mm walnut wood base.</p>
+<p>The first member of the Smol Space Program 🪐✨. This model runs on solar cells
+and flashes a LED light. If charged in direct sunlight it can run for almost
+5 hours. The original idea comes from Mohid Bhoite's Tiny Cube Sat.</p>
+<p>The heart of the model is a 10F super capacitor (the big yellow thing looking
+like a battery), which stores and releases the electricity collected by the solar
+cells. After half an hour of charging, enough energy is stored and the
+microcontroller on top of the capacitor turns on. It's an ATtiny85 chip and it's
+sole function is to flash the LED light. You can find the code that's running
+in the microcontroller below in the links section.</p>
+<p>In hindsight it would be better if the ATtiny somehow checks the voltage that's
+available and only turns on after charging is completed. But since this is my
+first model, it's kept rather simple.</p>
+<p>All components are held together by brass wiring. I used 1.2 mm and
+0.8 mm brass wire and soldered it together. The stand is a 26 mm thick
+and 80 mm wide walnut wood base.</p>
+<h2>Links</h2>
+<p><a href="https://gist.github.com/petermllrr/0dab23f958eaba381c769f051721ce3e">Microcontroller code</a></p>
+<p><a href="https://www.bhoite.com/sculptures/tiny-cube-sat/">Mohid Bhoite's Tiny Cube Sat</a></p>
+<p><a href="https://www.digikey.de/en/products/detail/anysolar-ltd/SM111K06L/9990436">IXYS solar cells</a></p>
 <h2>Schematics</h2>
 <p><a href="/images/smolsat_1/bDz0-ZeakT-1000.svg"><img alt="Wiring layout" loading="lazy" decoding="async" src="/images/smolsat_1/bDz0-ZeakT-1000.svg" width="1000" height="344"></a></p>
 <a href="/images/smolsat_1/NxmAKkijNc-3066.webp">
@@ -57,11 +155,6 @@ on a 26 mm thick and 80 mm walnut wood base.</p>
        decoding="async">
 </picture>
 </a>
-<h2>Code</h2>
-<script src="https://gist.github.com/petermllrr/0dab23f958eaba381c769f051721ce3e.js"></script>
-<h2>Links</h2>
-<p><a href="https://www.bhoite.com/sculptures/tiny-cube-sat/">Mohid Bhoite's Tiny Cube Sat</a></p>
-<p><a href="https://www.digikey.de/en/products/detail/anysolar-ltd/SM111K06L/9990436">IXYS solar cells</a></p>
 
 <h2>Gallery</h2>
 <section class="gallery">
@@ -242,7 +335,7 @@ on a 26 mm thick and 80 mm walnut wood base.</p>
   <img src="/images/smolsat_1_gallery/DKjZZ4y2_0-250.webp"
        width="4032"
        height="3024"
-       alt=""
+       alt="SMOLSAT fully assembled on my desk"
        loading="lazy"
        decoding="async">
 </picture>

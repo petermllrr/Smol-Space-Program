@@ -19,7 +19,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addJavaScriptFunction("svg", svgShortcode)
   
   eleventyConfig.addPassthroughCopy(INPUTDIR + "/favicon-32x32.png");
-  eleventyConfig.addPassthroughCopy(INPUTDIR + "/css");
 
   createImageGalleries(eleventyConfig);
 

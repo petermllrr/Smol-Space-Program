@@ -1,0 +1,67 @@
+html {
+  font-family: ui-monospace,
+               "SF Mono",
+               Monaco,
+               "Roboto Mono",
+               Consolas,
+               "Liberation Mono",
+               "DejaVu Sans Mono",
+               monospace;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14.5px;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    background-color: #e5e1dd;
+    color: #231d61;
+    color-scheme: light;
+  }
+
+  a, pre {
+    color: #124cf3;
+  }
+
+  a:hover {
+    color: #577cee;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #292c3b;
+    color: #e4f6fc;
+    color-scheme: dark;
+  }
+
+  a, pre {
+    color: #4fbcff;
+  }
+
+  a:hover {
+    color: White;
+  }
+}
+
+main {
+  margin: 0 auto;
+  max-width: 640px;
+  padding-block-start: 2em;
+  padding-block-end: 10em;
+}
+
+h1 {
+  margin-block-start: 1.3em;
+}
+
+h2 {
+  margin-block-start: 1.83em;
+}
+
+p {
+  line-height: 1.4;
+}

@@ -42,16 +42,19 @@ pictures and build reports.
 
 ## 🛰 Gallery
 
+<ul>
 {% for project in collections.project -%}
-<p><a href="{{ project.url }}">{{ project.data.title }}</a></p>
+<li><a href="{{ project.url }}">{{ project.data.title }}</a></li>
 {%- endfor %}
+</ul>
 
 ## 👩‍🚀 Author
 
-Peter Müller ([Web][1], [Twitter][2])
+Peter Müller
 
-Last updated: {% date "today" %} ([GitHub][3])
+* [Web][1]
+* <a rel="me" href="https://mstdn.social/@bearislive">Mastodon</a>
+* [Twitter][2]
 
 [1]: https://www.petermueller.io
 [2]: https://twitter.com/petermllrr
-[3]: https://github.com/petermllrr/Smol-Space-Program

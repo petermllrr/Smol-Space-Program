@@ -22,7 +22,7 @@
 {% endif -%}
 </section>
 <nav>
-<h2>Other projects</h2>
+<h2>More projects</h2>
 {% for project in collections.project -%}
 {% if project.data.title != title -%}
 <p><a href="{{ project.url }}">{{ project.data.title }}</a></p>
@@ -30,5 +30,6 @@
 {% endfor -%}
 </nav>
 </main>
+{% include "components/footer.njk" %}
 </body>
 </html>

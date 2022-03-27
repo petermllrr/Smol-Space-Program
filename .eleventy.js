@@ -14,10 +14,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksShortcode("date", dateShortcode);
   eleventyConfig.addLiquidShortcode("date", dateShortcode);
   eleventyConfig.addJavaScriptFunction("date", dateShortcode);
-  eleventyConfig.addNunjucksAsyncShortcode("svg", svgShortcode);
+  eleventyConfig.addNunjucksShortcode("svg", svgShortcode);
   eleventyConfig.addLiquidShortcode("svg", svgShortcode);
-  eleventyConfig.addJavaScriptFunction("svg", svgShortcode)
-  
+  eleventyConfig.addJavaScriptFunction("svg", svgShortcode);
+
   eleventyConfig.addPassthroughCopy(INPUTDIR + "/favicon-32x32.png");
 
   createImageGalleries(eleventyConfig);
@@ -250,6 +250,9 @@ async function svgShortcode(src, alt, sizes = "100vw") {
 function dateShortcode(date) {
   if (date === "today") {
     date = new Date(Date.now());
+  } else if (date === "year") {
+    const year = new Date().getFullYear();
+    return `${year}`;
   } else {
     date = this.page.date;
   }

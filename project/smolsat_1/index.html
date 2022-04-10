@@ -12,12 +12,14 @@
 html {
   font-family: ui-monospace,
                "SF Mono",
+               Menlo,
                Monaco,
                "Roboto Mono",
                Consolas,
                "Liberation Mono",
                "DejaVu Sans Mono",
                monospace;
+  font-size: 15px;
 }
 
 @media (max-width: 600px) {
@@ -26,9 +28,48 @@ html {
   }
 }
 
+main {
+  margin: 0 auto;
+  max-width: 700px;
+  padding-block-start: 2em;
+}
+
+footer {
+  margin: 0 auto;
+  max-width: 700px;
+  padding-block-start: 1em;
+}
+
+a, p {
+  line-height: 1.5;
+}
+
+p {
+  margin-block-start: 2em;
+  margin-block-end: 2em;
+}
+
+h1 {
+  margin-block-start: 1.3em;
+}
+
+h2 {
+  margin-block-start: 1.83em;
+}
+
+ul {
+  line-height: 1.7em;
+  padding-inline-start: 1em;
+}
+
+pre {
+  font-size: 0.8em;
+  overflow: auto;
+}
+
 @media (prefers-color-scheme: light) {
   html {
-    background-color: #e5e1dd;
+    background-color: #f0eff5;
     color: #231d61;
     color-scheme: light;
   }
@@ -40,12 +81,16 @@ html {
   a:hover {
     color: #577cee;
   }
+
+  hr {
+    border: .5px solid #231d61;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   html {
     background-color: #292c3b;
-    color: #e4f6fc;
+    color: #d5d8e7;
     color-scheme: dark;
   }
 
@@ -56,28 +101,14 @@ html {
   a:hover {
     color: White;
   }
+
+  hr {
+    border: .5px solid #e4f6fc;
+  }
 }
 
-main {
-  margin: 0 auto;
-  max-width: 640px;
-  padding-block-start: 2em;
-  padding-block-end: 10em;
-}
-
-h1 {
-  margin-block-start: 1.3em;
-}
-
-h2 {
-  margin-block-start: 1.83em;
-}
-
-p {
-  line-height: 1.4;
-}
 img {
-  border-radius: 1em;
+  border-radius: .3em;
   height: auto;
   width: 100%;
 }
@@ -100,6 +131,270 @@ picture {
 .gallery img {
   border-radius: 0.2em;
 }
+p > code {
+    border-radius: 0.3em;
+    font-size: 0.9em;
+    padding: .1em 0.2em;
+}
+
+/* PrismJS 1.27.0
+https://prismjs.com/download.html#themes=prism&languages=clike */
+
+@media (prefers-color-scheme: light) {
+    code {
+        background-color: #e9e8ee;
+        color: #dd4a68;
+    }
+
+    code[class*=language-],
+    pre[class*=language-] {
+        color: #000;
+        background: 0 0;
+        text-shadow: 0 1px #ffffff4c;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none
+    }
+
+    code[class*=language-] ::-moz-selection,
+    code[class*=language-]::-moz-selection,
+    pre[class*=language-] ::-moz-selection,
+    pre[class*=language-]::-moz-selection {
+        text-shadow: none;
+        background: #b3d4fc
+    }
+
+    code[class*=language-] ::selection,
+    code[class*=language-]::selection,
+    pre[class*=language-] ::selection,
+    pre[class*=language-]::selection {
+        text-shadow: none;
+        background: #b3d4fc
+    }
+
+    @media print {
+        code[class*=language-],
+        pre[class*=language-] {
+            text-shadow: none
+        }
+    }
+
+    pre[class*=language-] {
+        border-radius: .3em;
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto
+    }
+
+    :not(pre)>code[class*=language-],
+    pre[class*=language-] {
+        background: #e9e8ee;
+    }
+
+    :not(pre)>code[class*=language-] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal
+    }
+
+    .token.cdata,
+    .token.comment,
+    .token.doctype,
+    .token.prolog {
+        color: #708090
+    }
+
+    .token.punctuation {
+        color: #999
+    }
+
+    .token.namespace {
+        opacity: .7
+    }
+
+    .token.boolean,
+    .token.constant,
+    .token.deleted,
+    .token.number,
+    .token.property,
+    .token.symbol,
+    .token.tag {
+        color: #905
+    }
+
+    .token.attr-name,
+    .token.builtin,
+    .token.char,
+    .token.inserted,
+    .token.selector,
+    .token.string {
+        color: #690
+    }
+
+
+    .token.atrule,
+    .token.attr-value,
+    .token.keyword {
+        color: #07a
+    }
+
+    .token.class-name,
+    .token.function {
+        color: #dd4a68
+    }
+
+    .token.important,
+    .token.regex,
+    .token.variable {
+        color: #e90
+    }
+
+    .token.bold,
+    .token.important {
+        font-weight: 700
+    }
+
+    .token.italic {
+        font-style: italic
+    }
+
+    .token.entity {
+        cursor: help
+    }
+}
+
+/* PrismJS 1.27.0
+https://prismjs.com/download.html#themes=prism-okaidia&languages=clike */
+
+@media (prefers-color-scheme: dark) {
+    code {
+        background-color: #20232f;
+        color: #e6db74;
+    }
+
+    code[class*=language-],
+    pre[class*=language-] {
+        color: #f8f8f2;
+        background: 0 0;
+        text-shadow: 0 1px rgba(0, 0, 0, .3);
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none
+    }
+
+    pre[class*=language-] {
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto;
+        border-radius: .3em
+    }
+
+    :not(pre)>code[class*=language-],
+    pre[class*=language-] {
+        background: #20232f
+    }
+
+    :not(pre)>code[class*=language-] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal
+    }
+
+    .token.cdata,
+    .token.comment,
+    .token.doctype,
+    .token.prolog {
+        color: #8292a2
+    }
+
+    .token.punctuation {
+        color: #f8f8f2
+    }
+
+    .token.namespace {
+        opacity: .7
+    }
+
+    .token.constant,
+    .token.deleted,
+    .token.property,
+    .token.symbol,
+    .token.tag {
+        color: #f92672
+    }
+
+    .token.boolean,
+    .token.number {
+        color: #ae81ff
+    }
+
+    .token.attr-name,
+    .token.builtin,
+    .token.char,
+    .token.inserted,
+    .token.selector,
+    .token.string {
+        color: #a6e22e
+    }
+
+    .language-css .token.string,
+    .style .token.string,
+    .token.entity,
+    .token.operator,
+    .token.url,
+    .token.variable {
+        color: #f8f8f2
+    }
+
+    .token.atrule,
+    .token.attr-value,
+    .token.class-name,
+    .token.function {
+        color: #e6db74
+    }
+
+    .token.keyword {
+        color: #66d9ef
+    }
+
+    .token.important,
+    .token.regex {
+        color: #fd971f
+    }
+
+    .token.bold,
+    .token.important {
+        font-weight: 700
+    }
+
+    .token.italic {
+        font-style: italic
+    }
+
+    .token.entity {
+        cursor: help
+    }
+}
 </style>
 <title>SMOLSAT-1</title>
 </head>
@@ -111,16 +406,7 @@ picture {
 <h1>SMOLSAT-1</h1>
 <p>Peter Müller, <time datetime="2022-02-05">February 05, 2022</time></p>
 <a href="/images/smolsat_1/D7YJf6M763-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1/D7YJf6M763-640.avif 640w, /images/smolsat_1/D7YJf6M763-1280.avif 1280w, /images/smolsat_1/D7YJf6M763-4032.avif 4032w" sizes="(max-width: 639px) 100vw, (min-width: 640px) 640px">
-  <source type="image/webp" srcset="/images/smolsat_1/D7YJf6M763-640.webp 640w, /images/smolsat_1/D7YJf6M763-1280.webp 1280w, /images/smolsat_1/D7YJf6M763-4032.webp 4032w" sizes="(max-width: 639px) 100vw, (min-width: 640px) 640px">
-  <img src="/images/smolsat_1/D7YJf6M763-640.webp"
-       width="4032"
-       height="3024"
-       alt="SMOLSAT-1 completely assembled"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1/D7YJf6M763-700.avif 700w, /images/smolsat_1/D7YJf6M763-1400.avif 1400w, /images/smolsat_1/D7YJf6M763-4032.avif 4032w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><source type="image/webp" srcset="/images/smolsat_1/D7YJf6M763-700.webp 700w, /images/smolsat_1/D7YJf6M763-1400.webp 1400w, /images/smolsat_1/D7YJf6M763-4032.webp 4032w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><img alt="SMOLSAT-1 completely assembled" loading="lazy" decoding="async" src="/images/smolsat_1/D7YJf6M763-700.webp" width="4032" height="3024"></picture>
 </a>
 <p>The first member of the Smol Space Program 🪐✨. This model runs on solar cells
 and flashes a LED light. If charged in direct sunlight it can run for almost
@@ -138,408 +424,168 @@ first model, it's kept rather simple.</p>
 0.8 mm brass wire and soldered it together. The stand is a 26 mm thick
 and 80 mm wide walnut wood base.</p>
 <h2>Links</h2>
-<p><a href="https://gist.github.com/petermllrr/0dab23f958eaba381c769f051721ce3e">Microcontroller code</a></p>
-<p><a href="https://www.bhoite.com/sculptures/tiny-cube-sat/">Mohid Bhoite's Tiny Cube Sat</a></p>
-<p><a href="https://www.digikey.de/en/products/detail/anysolar-ltd/SM111K06L/9990436">IXYS solar cells</a></p>
+<ul>
+<li><a href="https://gist.github.com/petermllrr/0dab23f958eaba381c769f051721ce3e">Microcontroller code</a></li>
+<li><a href="https://www.bhoite.com/sculptures/tiny-cube-sat/">Mohid Bhoite's Tiny Cube Sat</a></li>
+<li><a href="https://www.digikey.de/en/products/detail/anysolar-ltd/SM111K06L/9990436">IXYS solar cells</a></li>
+</ul>
 <h2>Schematics</h2>
-<p><a href="/images/smolsat_1/bDz0-ZeakT-1000.svg"><img alt="Wiring layout" loading="lazy" decoding="async" src="/images/smolsat_1/bDz0-ZeakT-1000.svg" width="1000" height="344"></a></p>
-<a href="/images/smolsat_1/NxmAKkijNc-3066.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1/NxmAKkijNc-640.avif 640w, /images/smolsat_1/NxmAKkijNc-1280.avif 1280w, /images/smolsat_1/NxmAKkijNc-3066.avif 3066w" sizes="(max-width: 639px) 100vw, (min-width: 640px) 640px">
-  <source type="image/webp" srcset="/images/smolsat_1/NxmAKkijNc-640.webp 640w, /images/smolsat_1/NxmAKkijNc-1280.webp 1280w, /images/smolsat_1/NxmAKkijNc-3066.webp 3066w" sizes="(max-width: 639px) 100vw, (min-width: 640px) 640px">
-  <img src="/images/smolsat_1/NxmAKkijNc-640.webp"
-       width="3066"
-       height="1954"
-       alt="Schematics"
-       loading="lazy"
-       decoding="async">
-</picture>
+<a href="/images/smolsat_1/bDz0-ZeakT-1000.svg">
+<img alt="Wiring layout" loading="lazy" decoding="async" src="/images/smolsat_1/bDz0-ZeakT-1000.svg" width="1000" height="344">
+</a>
+<a href="/images/smolsat_1/NxmAKkijNc-1400.webp">
+<picture><source type="image/avif" srcset="/images/smolsat_1/NxmAKkijNc-700.avif 700w, /images/smolsat_1/NxmAKkijNc-1400.avif 1400w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><source type="image/webp" srcset="/images/smolsat_1/NxmAKkijNc-700.webp 700w, /images/smolsat_1/NxmAKkijNc-1400.webp 1400w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><img alt="Schematics" loading="lazy" decoding="async" src="/images/smolsat_1/NxmAKkijNc-700.webp" width="1400" height="892"></picture>
 </a>
 
 <h2>Gallery</h2>
 <section class="gallery">
 <a href="/images/smolsat_1_gallery/OkxSwW0Wlo-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/OkxSwW0Wlo-250.avif 250w, /images/smolsat_1_gallery/OkxSwW0Wlo-450.avif 450w, /images/smolsat_1_gallery/OkxSwW0Wlo-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/OkxSwW0Wlo-250.webp 250w, /images/smolsat_1_gallery/OkxSwW0Wlo-450.webp 450w, /images/smolsat_1_gallery/OkxSwW0Wlo-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/OkxSwW0Wlo-250.webp"
-       width="4032"
-       height="3024"
-       alt="My work area at home"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/OkxSwW0Wlo-250.avif 250w, /images/smolsat_1_gallery/OkxSwW0Wlo-450.avif 450w, /images/smolsat_1_gallery/OkxSwW0Wlo-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/OkxSwW0Wlo-250.webp 250w, /images/smolsat_1_gallery/OkxSwW0Wlo-450.webp 450w, /images/smolsat_1_gallery/OkxSwW0Wlo-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="My work area at home" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/OkxSwW0Wlo-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/L8mBa4Il3d-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/L8mBa4Il3d-250.avif 250w, /images/smolsat_1_gallery/L8mBa4Il3d-450.avif 450w, /images/smolsat_1_gallery/L8mBa4Il3d-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/L8mBa4Il3d-250.webp 250w, /images/smolsat_1_gallery/L8mBa4Il3d-450.webp 450w, /images/smolsat_1_gallery/L8mBa4Il3d-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/L8mBa4Il3d-250.webp"
-       width="4032"
-       height="3024"
-       alt="Prototyping on a breadboard"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/L8mBa4Il3d-250.avif 250w, /images/smolsat_1_gallery/L8mBa4Il3d-450.avif 450w, /images/smolsat_1_gallery/L8mBa4Il3d-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/L8mBa4Il3d-250.webp 250w, /images/smolsat_1_gallery/L8mBa4Il3d-450.webp 450w, /images/smolsat_1_gallery/L8mBa4Il3d-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Prototyping on a breadboard" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/L8mBa4Il3d-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/YpCal-Cjo3-450.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/YpCal-Cjo3-250.avif 250w, /images/smolsat_1_gallery/YpCal-Cjo3-450.avif 450w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/YpCal-Cjo3-250.webp 250w, /images/smolsat_1_gallery/YpCal-Cjo3-450.webp 450w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/YpCal-Cjo3-250.webp"
-       width="450"
-       height="337"
-       alt="Measuring voltage on the solar cells"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/YpCal-Cjo3-250.avif 250w, /images/smolsat_1_gallery/YpCal-Cjo3-450.avif 450w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/YpCal-Cjo3-250.webp 250w, /images/smolsat_1_gallery/YpCal-Cjo3-450.webp 450w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Measuring voltage on the solar cells" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/YpCal-Cjo3-250.webp" width="450" height="337"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/vQZoZgt1tr-450.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/vQZoZgt1tr-250.avif 250w, /images/smolsat_1_gallery/vQZoZgt1tr-450.avif 450w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/vQZoZgt1tr-250.webp 250w, /images/smolsat_1_gallery/vQZoZgt1tr-450.webp 450w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/vQZoZgt1tr-250.webp"
-       width="450"
-       height="337"
-       alt="First steps in soldering brass wire"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/vQZoZgt1tr-250.avif 250w, /images/smolsat_1_gallery/vQZoZgt1tr-450.avif 450w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/vQZoZgt1tr-250.webp 250w, /images/smolsat_1_gallery/vQZoZgt1tr-450.webp 450w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="First steps in soldering brass wire" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/vQZoZgt1tr-250.webp" width="450" height="337"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/WOarfzxs9d-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/WOarfzxs9d-250.avif 250w, /images/smolsat_1_gallery/WOarfzxs9d-450.avif 450w, /images/smolsat_1_gallery/WOarfzxs9d-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/WOarfzxs9d-250.webp 250w, /images/smolsat_1_gallery/WOarfzxs9d-450.webp 450w, /images/smolsat_1_gallery/WOarfzxs9d-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/WOarfzxs9d-250.webp"
-       width="4032"
-       height="3024"
-       alt="Measuring voltage of the solar cells again"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/WOarfzxs9d-250.avif 250w, /images/smolsat_1_gallery/WOarfzxs9d-450.avif 450w, /images/smolsat_1_gallery/WOarfzxs9d-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/WOarfzxs9d-250.webp 250w, /images/smolsat_1_gallery/WOarfzxs9d-450.webp 450w, /images/smolsat_1_gallery/WOarfzxs9d-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Measuring voltage of the solar cells again" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/WOarfzxs9d-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/unXdHvGLzb-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/unXdHvGLzb-250.avif 250w, /images/smolsat_1_gallery/unXdHvGLzb-450.avif 450w, /images/smolsat_1_gallery/unXdHvGLzb-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/unXdHvGLzb-250.webp 250w, /images/smolsat_1_gallery/unXdHvGLzb-450.webp 450w, /images/smolsat_1_gallery/unXdHvGLzb-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/unXdHvGLzb-250.webp"
-       width="4032"
-       height="3024"
-       alt="Testing the circuit with the solar engine"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/unXdHvGLzb-250.avif 250w, /images/smolsat_1_gallery/unXdHvGLzb-450.avif 450w, /images/smolsat_1_gallery/unXdHvGLzb-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/unXdHvGLzb-250.webp 250w, /images/smolsat_1_gallery/unXdHvGLzb-450.webp 450w, /images/smolsat_1_gallery/unXdHvGLzb-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Testing the circuit with the solar engine" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/unXdHvGLzb-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/aJ_5rIO1t--4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/aJ_5rIO1t--250.avif 250w, /images/smolsat_1_gallery/aJ_5rIO1t--450.avif 450w, /images/smolsat_1_gallery/aJ_5rIO1t--4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/aJ_5rIO1t--250.webp 250w, /images/smolsat_1_gallery/aJ_5rIO1t--450.webp 450w, /images/smolsat_1_gallery/aJ_5rIO1t--4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/aJ_5rIO1t--250.webp"
-       width="4032"
-       height="3024"
-       alt="Inserting the capacitor into the wire frame "
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/aJ_5rIO1t--250.avif 250w, /images/smolsat_1_gallery/aJ_5rIO1t--450.avif 450w, /images/smolsat_1_gallery/aJ_5rIO1t--4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/aJ_5rIO1t--250.webp 250w, /images/smolsat_1_gallery/aJ_5rIO1t--450.webp 450w, /images/smolsat_1_gallery/aJ_5rIO1t--4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Inserting the capacitor into the wire frame " loading="lazy" decoding="async" src="/images/smolsat_1_gallery/aJ_5rIO1t--250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/Wi6j1xP6Fq-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/Wi6j1xP6Fq-250.avif 250w, /images/smolsat_1_gallery/Wi6j1xP6Fq-450.avif 450w, /images/smolsat_1_gallery/Wi6j1xP6Fq-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/Wi6j1xP6Fq-250.webp 250w, /images/smolsat_1_gallery/Wi6j1xP6Fq-450.webp 450w, /images/smolsat_1_gallery/Wi6j1xP6Fq-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/Wi6j1xP6Fq-250.webp"
-       width="4032"
-       height="3024"
-       alt="Building sub components individually"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/Wi6j1xP6Fq-250.avif 250w, /images/smolsat_1_gallery/Wi6j1xP6Fq-450.avif 450w, /images/smolsat_1_gallery/Wi6j1xP6Fq-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/Wi6j1xP6Fq-250.webp 250w, /images/smolsat_1_gallery/Wi6j1xP6Fq-450.webp 450w, /images/smolsat_1_gallery/Wi6j1xP6Fq-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Building sub components individually" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/Wi6j1xP6Fq-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/eCk0kP_rYW-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/eCk0kP_rYW-250.avif 250w, /images/smolsat_1_gallery/eCk0kP_rYW-450.avif 450w, /images/smolsat_1_gallery/eCk0kP_rYW-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/eCk0kP_rYW-250.webp 250w, /images/smolsat_1_gallery/eCk0kP_rYW-450.webp 450w, /images/smolsat_1_gallery/eCk0kP_rYW-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/eCk0kP_rYW-250.webp"
-       width="4032"
-       height="3024"
-       alt="Putting the capacitor in place"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/eCk0kP_rYW-250.avif 250w, /images/smolsat_1_gallery/eCk0kP_rYW-450.avif 450w, /images/smolsat_1_gallery/eCk0kP_rYW-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/eCk0kP_rYW-250.webp 250w, /images/smolsat_1_gallery/eCk0kP_rYW-450.webp 450w, /images/smolsat_1_gallery/eCk0kP_rYW-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Putting the capacitor in place" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/eCk0kP_rYW-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/gPvIE4aDBf-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/gPvIE4aDBf-250.avif 250w, /images/smolsat_1_gallery/gPvIE4aDBf-450.avif 450w, /images/smolsat_1_gallery/gPvIE4aDBf-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/gPvIE4aDBf-250.webp 250w, /images/smolsat_1_gallery/gPvIE4aDBf-450.webp 450w, /images/smolsat_1_gallery/gPvIE4aDBf-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/gPvIE4aDBf-250.webp"
-       width="4032"
-       height="3024"
-       alt="Detail view of the back, placing the final wire"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/gPvIE4aDBf-250.avif 250w, /images/smolsat_1_gallery/gPvIE4aDBf-450.avif 450w, /images/smolsat_1_gallery/gPvIE4aDBf-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/gPvIE4aDBf-250.webp 250w, /images/smolsat_1_gallery/gPvIE4aDBf-450.webp 450w, /images/smolsat_1_gallery/gPvIE4aDBf-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Detail view of the back, placing the final wire" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/gPvIE4aDBf-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/Ttr0LoSvGC-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/Ttr0LoSvGC-250.avif 250w, /images/smolsat_1_gallery/Ttr0LoSvGC-450.avif 450w, /images/smolsat_1_gallery/Ttr0LoSvGC-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/Ttr0LoSvGC-250.webp 250w, /images/smolsat_1_gallery/Ttr0LoSvGC-450.webp 450w, /images/smolsat_1_gallery/Ttr0LoSvGC-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/Ttr0LoSvGC-250.webp"
-       width="4032"
-       height="3024"
-       alt="Total view of my work place"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/Ttr0LoSvGC-250.avif 250w, /images/smolsat_1_gallery/Ttr0LoSvGC-450.avif 450w, /images/smolsat_1_gallery/Ttr0LoSvGC-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/Ttr0LoSvGC-250.webp 250w, /images/smolsat_1_gallery/Ttr0LoSvGC-450.webp 450w, /images/smolsat_1_gallery/Ttr0LoSvGC-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Total view of my work place" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/Ttr0LoSvGC-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/AtL9qp7Gxh-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/AtL9qp7Gxh-250.avif 250w, /images/smolsat_1_gallery/AtL9qp7Gxh-450.avif 450w, /images/smolsat_1_gallery/AtL9qp7Gxh-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/AtL9qp7Gxh-250.webp 250w, /images/smolsat_1_gallery/AtL9qp7Gxh-450.webp 450w, /images/smolsat_1_gallery/AtL9qp7Gxh-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/AtL9qp7Gxh-250.webp"
-       width="4032"
-       height="3024"
-       alt="It's done! The finished satellite model"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/AtL9qp7Gxh-250.avif 250w, /images/smolsat_1_gallery/AtL9qp7Gxh-450.avif 450w, /images/smolsat_1_gallery/AtL9qp7Gxh-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/AtL9qp7Gxh-250.webp 250w, /images/smolsat_1_gallery/AtL9qp7Gxh-450.webp 450w, /images/smolsat_1_gallery/AtL9qp7Gxh-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="It's done! The finished satellite model" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/AtL9qp7Gxh-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/DKjZZ4y2_0-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/DKjZZ4y2_0-250.avif 250w, /images/smolsat_1_gallery/DKjZZ4y2_0-450.avif 450w, /images/smolsat_1_gallery/DKjZZ4y2_0-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/DKjZZ4y2_0-250.webp 250w, /images/smolsat_1_gallery/DKjZZ4y2_0-450.webp 450w, /images/smolsat_1_gallery/DKjZZ4y2_0-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/DKjZZ4y2_0-250.webp"
-       width="4032"
-       height="3024"
-       alt="SMOLSAT fully assembled on my desk"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/DKjZZ4y2_0-250.avif 250w, /images/smolsat_1_gallery/DKjZZ4y2_0-450.avif 450w, /images/smolsat_1_gallery/DKjZZ4y2_0-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/DKjZZ4y2_0-250.webp 250w, /images/smolsat_1_gallery/DKjZZ4y2_0-450.webp 450w, /images/smolsat_1_gallery/DKjZZ4y2_0-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="SMOLSAT fully assembled on my desk" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/DKjZZ4y2_0-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/3zr52yhnVv-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/3zr52yhnVv-250.avif 250w, /images/smolsat_1_gallery/3zr52yhnVv-450.avif 450w, /images/smolsat_1_gallery/3zr52yhnVv-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/3zr52yhnVv-250.webp 250w, /images/smolsat_1_gallery/3zr52yhnVv-450.webp 450w, /images/smolsat_1_gallery/3zr52yhnVv-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/3zr52yhnVv-250.webp"
-       width="4032"
-       height="3024"
-       alt="Bottom view of the model"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/3zr52yhnVv-250.avif 250w, /images/smolsat_1_gallery/3zr52yhnVv-450.avif 450w, /images/smolsat_1_gallery/3zr52yhnVv-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/3zr52yhnVv-250.webp 250w, /images/smolsat_1_gallery/3zr52yhnVv-450.webp 450w, /images/smolsat_1_gallery/3zr52yhnVv-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Bottom view of the model" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/3zr52yhnVv-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/9au6bMK8_O-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/9au6bMK8_O-250.avif 250w, /images/smolsat_1_gallery/9au6bMK8_O-450.avif 450w, /images/smolsat_1_gallery/9au6bMK8_O-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/9au6bMK8_O-250.webp 250w, /images/smolsat_1_gallery/9au6bMK8_O-450.webp 450w, /images/smolsat_1_gallery/9au6bMK8_O-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/9au6bMK8_O-250.webp"
-       width="4032"
-       height="3024"
-       alt="First test in the sunlight. It blinks and looks great!"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/9au6bMK8_O-250.avif 250w, /images/smolsat_1_gallery/9au6bMK8_O-450.avif 450w, /images/smolsat_1_gallery/9au6bMK8_O-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/9au6bMK8_O-250.webp 250w, /images/smolsat_1_gallery/9au6bMK8_O-450.webp 450w, /images/smolsat_1_gallery/9au6bMK8_O-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="First test in the sunlight. It blinks and looks great!" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/9au6bMK8_O-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/mteHlM24vL-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/mteHlM24vL-250.avif 250w, /images/smolsat_1_gallery/mteHlM24vL-450.avif 450w, /images/smolsat_1_gallery/mteHlM24vL-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/mteHlM24vL-250.webp 250w, /images/smolsat_1_gallery/mteHlM24vL-450.webp 450w, /images/smolsat_1_gallery/mteHlM24vL-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/mteHlM24vL-250.webp"
-       width="4032"
-       height="3024"
-       alt="SMOLSAT-1 chilling in the sunlight"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/mteHlM24vL-250.avif 250w, /images/smolsat_1_gallery/mteHlM24vL-450.avif 450w, /images/smolsat_1_gallery/mteHlM24vL-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/mteHlM24vL-250.webp 250w, /images/smolsat_1_gallery/mteHlM24vL-450.webp 450w, /images/smolsat_1_gallery/mteHlM24vL-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="SMOLSAT-1 chilling in the sunlight" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/mteHlM24vL-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/R7gccMgGwX-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/R7gccMgGwX-250.avif 250w, /images/smolsat_1_gallery/R7gccMgGwX-450.avif 450w, /images/smolsat_1_gallery/R7gccMgGwX-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/R7gccMgGwX-250.webp 250w, /images/smolsat_1_gallery/R7gccMgGwX-450.webp 450w, /images/smolsat_1_gallery/R7gccMgGwX-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/R7gccMgGwX-250.webp"
-       width="4032"
-       height="3024"
-       alt="Wooden stand"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/R7gccMgGwX-250.avif 250w, /images/smolsat_1_gallery/R7gccMgGwX-450.avif 450w, /images/smolsat_1_gallery/R7gccMgGwX-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/R7gccMgGwX-250.webp 250w, /images/smolsat_1_gallery/R7gccMgGwX-450.webp 450w, /images/smolsat_1_gallery/R7gccMgGwX-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Wooden stand" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/R7gccMgGwX-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/D7YJf6M763-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/D7YJf6M763-250.avif 250w, /images/smolsat_1_gallery/D7YJf6M763-450.avif 450w, /images/smolsat_1_gallery/D7YJf6M763-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/D7YJf6M763-250.webp 250w, /images/smolsat_1_gallery/D7YJf6M763-450.webp 450w, /images/smolsat_1_gallery/D7YJf6M763-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/D7YJf6M763-250.webp"
-       width="4032"
-       height="3024"
-       alt="SMOLSAT in all it's glory"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/D7YJf6M763-250.avif 250w, /images/smolsat_1_gallery/D7YJf6M763-450.avif 450w, /images/smolsat_1_gallery/D7YJf6M763-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/D7YJf6M763-250.webp 250w, /images/smolsat_1_gallery/D7YJf6M763-450.webp 450w, /images/smolsat_1_gallery/D7YJf6M763-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="SMOLSAT in all it's glory" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/D7YJf6M763-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/-GVR9D3JtK-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/-GVR9D3JtK-250.avif 250w, /images/smolsat_1_gallery/-GVR9D3JtK-450.avif 450w, /images/smolsat_1_gallery/-GVR9D3JtK-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/-GVR9D3JtK-250.webp 250w, /images/smolsat_1_gallery/-GVR9D3JtK-450.webp 450w, /images/smolsat_1_gallery/-GVR9D3JtK-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/-GVR9D3JtK-250.webp"
-       width="4032"
-       height="3024"
-       alt="Detail shot from the top"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/-GVR9D3JtK-250.avif 250w, /images/smolsat_1_gallery/-GVR9D3JtK-450.avif 450w, /images/smolsat_1_gallery/-GVR9D3JtK-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/-GVR9D3JtK-250.webp 250w, /images/smolsat_1_gallery/-GVR9D3JtK-450.webp 450w, /images/smolsat_1_gallery/-GVR9D3JtK-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Detail shot from the top" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/-GVR9D3JtK-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/LJ4XonxChD-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/LJ4XonxChD-250.avif 250w, /images/smolsat_1_gallery/LJ4XonxChD-450.avif 450w, /images/smolsat_1_gallery/LJ4XonxChD-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/LJ4XonxChD-250.webp 250w, /images/smolsat_1_gallery/LJ4XonxChD-450.webp 450w, /images/smolsat_1_gallery/LJ4XonxChD-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/LJ4XonxChD-250.webp"
-       width="4032"
-       height="3024"
-       alt="Detail shot from the back"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/LJ4XonxChD-250.avif 250w, /images/smolsat_1_gallery/LJ4XonxChD-450.avif 450w, /images/smolsat_1_gallery/LJ4XonxChD-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/LJ4XonxChD-250.webp 250w, /images/smolsat_1_gallery/LJ4XonxChD-450.webp 450w, /images/smolsat_1_gallery/LJ4XonxChD-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Detail shot from the back" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/LJ4XonxChD-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/ahF8eVnb3l-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/ahF8eVnb3l-250.avif 250w, /images/smolsat_1_gallery/ahF8eVnb3l-450.avif 450w, /images/smolsat_1_gallery/ahF8eVnb3l-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/ahF8eVnb3l-250.webp 250w, /images/smolsat_1_gallery/ahF8eVnb3l-450.webp 450w, /images/smolsat_1_gallery/ahF8eVnb3l-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/ahF8eVnb3l-250.webp"
-       width="4032"
-       height="3024"
-       alt="Detail shot from the left side"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/ahF8eVnb3l-250.avif 250w, /images/smolsat_1_gallery/ahF8eVnb3l-450.avif 450w, /images/smolsat_1_gallery/ahF8eVnb3l-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/ahF8eVnb3l-250.webp 250w, /images/smolsat_1_gallery/ahF8eVnb3l-450.webp 450w, /images/smolsat_1_gallery/ahF8eVnb3l-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Detail shot from the left side" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/ahF8eVnb3l-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/yitFOCBqf9-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/yitFOCBqf9-250.avif 250w, /images/smolsat_1_gallery/yitFOCBqf9-450.avif 450w, /images/smolsat_1_gallery/yitFOCBqf9-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/yitFOCBqf9-250.webp 250w, /images/smolsat_1_gallery/yitFOCBqf9-450.webp 450w, /images/smolsat_1_gallery/yitFOCBqf9-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/yitFOCBqf9-250.webp"
-       width="4032"
-       height="3024"
-       alt="Detail shot from the right side"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/yitFOCBqf9-250.avif 250w, /images/smolsat_1_gallery/yitFOCBqf9-450.avif 450w, /images/smolsat_1_gallery/yitFOCBqf9-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/yitFOCBqf9-250.webp 250w, /images/smolsat_1_gallery/yitFOCBqf9-450.webp 450w, /images/smolsat_1_gallery/yitFOCBqf9-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Detail shot from the right side" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/yitFOCBqf9-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/iASmlmhher-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/iASmlmhher-250.avif 250w, /images/smolsat_1_gallery/iASmlmhher-450.avif 450w, /images/smolsat_1_gallery/iASmlmhher-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/iASmlmhher-250.webp 250w, /images/smolsat_1_gallery/iASmlmhher-450.webp 450w, /images/smolsat_1_gallery/iASmlmhher-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/iASmlmhher-250.webp"
-       width="4032"
-       height="3024"
-       alt="It's working and blinking!"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/iASmlmhher-250.avif 250w, /images/smolsat_1_gallery/iASmlmhher-450.avif 450w, /images/smolsat_1_gallery/iASmlmhher-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/iASmlmhher-250.webp 250w, /images/smolsat_1_gallery/iASmlmhher-450.webp 450w, /images/smolsat_1_gallery/iASmlmhher-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="It's working and blinking!" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/iASmlmhher-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/vOKnfCygQs-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/vOKnfCygQs-250.avif 250w, /images/smolsat_1_gallery/vOKnfCygQs-450.avif 450w, /images/smolsat_1_gallery/vOKnfCygQs-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/vOKnfCygQs-250.webp 250w, /images/smolsat_1_gallery/vOKnfCygQs-450.webp 450w, /images/smolsat_1_gallery/vOKnfCygQs-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/vOKnfCygQs-250.webp"
-       width="4032"
-       height="3024"
-       alt="Top view"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/vOKnfCygQs-250.avif 250w, /images/smolsat_1_gallery/vOKnfCygQs-450.avif 450w, /images/smolsat_1_gallery/vOKnfCygQs-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/vOKnfCygQs-250.webp 250w, /images/smolsat_1_gallery/vOKnfCygQs-450.webp 450w, /images/smolsat_1_gallery/vOKnfCygQs-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Top view" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/vOKnfCygQs-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/EIxtXu4a3g-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/EIxtXu4a3g-250.avif 250w, /images/smolsat_1_gallery/EIxtXu4a3g-450.avif 450w, /images/smolsat_1_gallery/EIxtXu4a3g-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/EIxtXu4a3g-250.webp 250w, /images/smolsat_1_gallery/EIxtXu4a3g-450.webp 450w, /images/smolsat_1_gallery/EIxtXu4a3g-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/EIxtXu4a3g-250.webp"
-       width="4032"
-       height="3024"
-       alt="Detail shot from the top"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/EIxtXu4a3g-250.avif 250w, /images/smolsat_1_gallery/EIxtXu4a3g-450.avif 450w, /images/smolsat_1_gallery/EIxtXu4a3g-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/EIxtXu4a3g-250.webp 250w, /images/smolsat_1_gallery/EIxtXu4a3g-450.webp 450w, /images/smolsat_1_gallery/EIxtXu4a3g-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Detail shot from the top" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/EIxtXu4a3g-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/GYYBUSwHAy-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/GYYBUSwHAy-250.avif 250w, /images/smolsat_1_gallery/GYYBUSwHAy-450.avif 450w, /images/smolsat_1_gallery/GYYBUSwHAy-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/GYYBUSwHAy-250.webp 250w, /images/smolsat_1_gallery/GYYBUSwHAy-450.webp 450w, /images/smolsat_1_gallery/GYYBUSwHAy-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/GYYBUSwHAy-250.webp"
-       width="4032"
-       height="3024"
-       alt="Complete model with wooden stand"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/GYYBUSwHAy-250.avif 250w, /images/smolsat_1_gallery/GYYBUSwHAy-450.avif 450w, /images/smolsat_1_gallery/GYYBUSwHAy-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/GYYBUSwHAy-250.webp 250w, /images/smolsat_1_gallery/GYYBUSwHAy-450.webp 450w, /images/smolsat_1_gallery/GYYBUSwHAy-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Complete model with wooden stand" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/GYYBUSwHAy-250.webp" width="4032" height="3024"></picture>
 </a>
 <a href="/images/smolsat_1_gallery/XuXTtmPgQr-4032.webp">
-<picture>
-  <source type="image/avif" srcset="/images/smolsat_1_gallery/XuXTtmPgQr-250.avif 250w, /images/smolsat_1_gallery/XuXTtmPgQr-450.avif 450w, /images/smolsat_1_gallery/XuXTtmPgQr-4032.avif 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <source type="image/webp" srcset="/images/smolsat_1_gallery/XuXTtmPgQr-250.webp 250w, /images/smolsat_1_gallery/XuXTtmPgQr-450.webp 450w, /images/smolsat_1_gallery/XuXTtmPgQr-4032.webp 4032w" sizes="(max-width: 639px) calc((100vw / 3) - 2em -16px),
-          (min-width: 640px) 203px">
-  <img src="/images/smolsat_1_gallery/XuXTtmPgQr-250.webp"
-       width="4032"
-       height="3024"
-       alt="Close up"
-       loading="lazy"
-       decoding="async">
-</picture>
+<picture><source type="image/avif" srcset="/images/smolsat_1_gallery/XuXTtmPgQr-250.avif 250w, /images/smolsat_1_gallery/XuXTtmPgQr-450.avif 450w, /images/smolsat_1_gallery/XuXTtmPgQr-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/XuXTtmPgQr-250.webp 250w, /images/smolsat_1_gallery/XuXTtmPgQr-450.webp 450w, /images/smolsat_1_gallery/XuXTtmPgQr-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Close up" loading="lazy" decoding="async" src="/images/smolsat_1_gallery/XuXTtmPgQr-250.webp" width="4032" height="3024"></picture>
 </a>
 </section>
 <nav>
-<h2>Other projects</h2>
+<h2>More projects</h2>
+<p><a href="/project/orion/">ORION</a></p>
 </nav>
 </main>
+<footer>
+<p>
+--<br>
+Peter Müller © 2022 - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a><br>
+Last updated: <time datetime="2022-04-10">April 10, 2022</time> - <a href="https://github.com/petermllrr/Smol-Space-Program">GitHub</a>
+</p>
+</footer>
 </body>
 </html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A smol replica of NASA&#39;s Orion spacecraft.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#e5e1dd" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#292c3b" />
+<link rel="icon" href="/favicon-32x32.png" type="image/png">
+<style>
+html {
+  font-family: ui-monospace,
+               "SF Mono",
+               Menlo,
+               Monaco,
+               "Roboto Mono",
+               Consolas,
+               "Liberation Mono",
+               "DejaVu Sans Mono",
+               monospace;
+  font-size: 15px;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14.5px;
+  }
+}
+
+main {
+  margin: 0 auto;
+  max-width: 700px;
+  padding-block-start: 2em;
+}
+
+footer {
+  margin: 0 auto;
+  max-width: 700px;
+  padding-block-start: 1em;
+}
+
+a, p {
+  line-height: 1.5;
+}
+
+p {
+  margin-block-start: 2em;
+  margin-block-end: 2em;
+}
+
+h1 {
+  margin-block-start: 1.3em;
+}
+
+h2 {
+  margin-block-start: 1.83em;
+}
+
+ul {
+  line-height: 1.7em;
+  padding-inline-start: 1em;
+}
+
+pre {
+  font-size: 0.8em;
+  overflow: auto;
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    background-color: #f0eff5;
+    color: #231d61;
+    color-scheme: light;
+  }
+
+  a, pre {
+    color: #124cf3;
+  }
+
+  a:hover {
+    color: #577cee;
+  }
+
+  hr {
+    border: .5px solid #231d61;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #292c3b;
+    color: #d5d8e7;
+    color-scheme: dark;
+  }
+
+  a, pre {
+    color: #4fbcff;
+  }
+
+  a:hover {
+    color: White;
+  }
+
+  hr {
+    border: .5px solid #e4f6fc;
+  }
+}
+
+img {
+  border-radius: .3em;
+  height: auto;
+  width: 100%;
+}
+
+picture {
+  display: block;
+  margin-block-end: 1em;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: .5em;
+}
+
+.gallery picture {
+  margin-block-end: -.25em;
+}
+
+.gallery img {
+  border-radius: 0.2em;
+}
+p > code {
+    border-radius: 0.3em;
+    font-size: 0.9em;
+    padding: .1em 0.2em;
+}
+
+/* PrismJS 1.27.0
+https://prismjs.com/download.html#themes=prism&languages=clike */
+
+@media (prefers-color-scheme: light) {
+    code {
+        background-color: #e9e8ee;
+        color: #dd4a68;
+    }
+
+    code[class*=language-],
+    pre[class*=language-] {
+        color: #000;
+        background: 0 0;
+        text-shadow: 0 1px #ffffff4c;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none
+    }
+
+    code[class*=language-] ::-moz-selection,
+    code[class*=language-]::-moz-selection,
+    pre[class*=language-] ::-moz-selection,
+    pre[class*=language-]::-moz-selection {
+        text-shadow: none;
+        background: #b3d4fc
+    }
+
+    code[class*=language-] ::selection,
+    code[class*=language-]::selection,
+    pre[class*=language-] ::selection,
+    pre[class*=language-]::selection {
+        text-shadow: none;
+        background: #b3d4fc
+    }
+
+    @media print {
+        code[class*=language-],
+        pre[class*=language-] {
+            text-shadow: none
+        }
+    }
+
+    pre[class*=language-] {
+        border-radius: .3em;
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto
+    }
+
+    :not(pre)>code[class*=language-],
+    pre[class*=language-] {
+        background: #e9e8ee;
+    }
+
+    :not(pre)>code[class*=language-] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal
+    }
+
+    .token.cdata,
+    .token.comment,
+    .token.doctype,
+    .token.prolog {
+        color: #708090
+    }
+
+    .token.punctuation {
+        color: #999
+    }
+
+    .token.namespace {
+        opacity: .7
+    }
+
+    .token.boolean,
+    .token.constant,
+    .token.deleted,
+    .token.number,
+    .token.property,
+    .token.symbol,
+    .token.tag {
+        color: #905
+    }
+
+    .token.attr-name,
+    .token.builtin,
+    .token.char,
+    .token.inserted,
+    .token.selector,
+    .token.string {
+        color: #690
+    }
+
+
+    .token.atrule,
+    .token.attr-value,
+    .token.keyword {
+        color: #07a
+    }
+
+    .token.class-name,
+    .token.function {
+        color: #dd4a68
+    }
+
+    .token.important,
+    .token.regex,
+    .token.variable {
+        color: #e90
+    }
+
+    .token.bold,
+    .token.important {
+        font-weight: 700
+    }
+
+    .token.italic {
+        font-style: italic
+    }
+
+    .token.entity {
+        cursor: help
+    }
+}
+
+/* PrismJS 1.27.0
+https://prismjs.com/download.html#themes=prism-okaidia&languages=clike */
+
+@media (prefers-color-scheme: dark) {
+    code {
+        background-color: #20232f;
+        color: #e6db74;
+    }
+
+    code[class*=language-],
+    pre[class*=language-] {
+        color: #f8f8f2;
+        background: 0 0;
+        text-shadow: 0 1px rgba(0, 0, 0, .3);
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none
+    }
+
+    pre[class*=language-] {
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto;
+        border-radius: .3em
+    }
+
+    :not(pre)>code[class*=language-],
+    pre[class*=language-] {
+        background: #20232f
+    }
+
+    :not(pre)>code[class*=language-] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal
+    }
+
+    .token.cdata,
+    .token.comment,
+    .token.doctype,
+    .token.prolog {
+        color: #8292a2
+    }
+
+    .token.punctuation {
+        color: #f8f8f2
+    }
+
+    .token.namespace {
+        opacity: .7
+    }
+
+    .token.constant,
+    .token.deleted,
+    .token.property,
+    .token.symbol,
+    .token.tag {
+        color: #f92672
+    }
+
+    .token.boolean,
+    .token.number {
+        color: #ae81ff
+    }
+
+    .token.attr-name,
+    .token.builtin,
+    .token.char,
+    .token.inserted,
+    .token.selector,
+    .token.string {
+        color: #a6e22e
+    }
+
+    .language-css .token.string,
+    .style .token.string,
+    .token.entity,
+    .token.operator,
+    .token.url,
+    .token.variable {
+        color: #f8f8f2
+    }
+
+    .token.atrule,
+    .token.attr-value,
+    .token.class-name,
+    .token.function {
+        color: #e6db74
+    }
+
+    .token.keyword {
+        color: #66d9ef
+    }
+
+    .token.important,
+    .token.regex {
+        color: #fd971f
+    }
+
+    .token.bold,
+    .token.important {
+        font-weight: 700
+    }
+
+    .token.italic {
+        font-style: italic
+    }
+
+    .token.entity {
+        cursor: help
+    }
+}
+</style>
+<title>ORION</title>
+</head>
+<body>
+<main>
+<nav class="menu">
+  <span role="presentation">◀ </span><a href="/">Home</a>
+</nav>
+<h1>ORION</h1>
+<p>Peter Müller, <time datetime="2022-03-19">March 19, 2022</time></p>
+<a href="/images/orion/jzv19bVCtG-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion/jzv19bVCtG-700.avif 700w, /images/orion/jzv19bVCtG-1400.avif 1400w, /images/orion/jzv19bVCtG-4032.avif 4032w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><source type="image/webp" srcset="/images/orion/jzv19bVCtG-700.webp 700w, /images/orion/jzv19bVCtG-1400.webp 1400w, /images/orion/jzv19bVCtG-4032.webp 4032w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><img alt="Fully assembled ORION model" loading="lazy" decoding="async" src="/images/orion/jzv19bVCtG-700.webp" width="4032" height="3024"></picture>
+</a>
+<a href="/images/orion/g1ep4fGqci-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion/g1ep4fGqci-700.avif 700w, /images/orion/g1ep4fGqci-1400.avif 1400w, /images/orion/g1ep4fGqci-4032.avif 4032w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><source type="image/webp" srcset="/images/orion/g1ep4fGqci-700.webp 700w, /images/orion/g1ep4fGqci-1400.webp 1400w, /images/orion/g1ep4fGqci-4032.webp 4032w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><img alt="Rendering of ORION spacecraft in orbit above the earth. Image credit NASA." loading="lazy" decoding="async" src="/images/orion/g1ep4fGqci-700.webp" width="4032" height="2267"></picture>
+</a>
+<p>Earlier this month, Artemis 1 rolled out of NASA's rocket assembly bay and slowly moved towards the launch pad. The Artemis mission will launch an uncrewed Orion spacecraft and 13 tiny cube satellites to the moon. Once there, Orion will orbit the moon for up to 23 days until returning to earth and splash down into the ocean.</p>
+<p><a href="https://twitter.com/NASAArtemis/status/1508537947548786701">Twitter: Artemis-1 rollout by @NASA_SLS</a></p>
+<p>This mission excited me so much that I decided to build a smol Orion model. The spacecraft with its four solar panels looks really cool, and after my relatively simple cube sat from last time, I wanted to build a more complex model. Like SMOLSAT-1, this model is just be a solar-powered blinking LED. I was not very satisfied with the performance of my last model; the LED consumed the energy too fast and the behavior of the microcontroller was absolutely not smart.</p>
+<p>With the ORION, the microcontroller now measures whether the solar cells are receiving sunlight and switches itself to power-saving mode to conserve energy. This way the model charges much faster. As soon as it is dark, the microcontroller switches on and starts the light show.</p>
+<h2>Parts</h2>
+<ul>
+<li><a href="https://www.reichelt.de/8-bit-attiny-avr-risc-mikrocontroller-4-kb-20-mhz-pdip-8-attiny-45-20pu-p68160.html?&amp;trstct=pos_8&amp;nbc=1">ATtiny45 or 85 in PDIP format</a></li>
+<li>2x 3V 5F supercapacitors</li>
+<li>1× Schottky diode</li>
+<li>Resistors: 2× 10kΩ, 1× 150Ω</li>
+<li>4× <a href="https://www.digikey.de/de/products/detail/anysolar-ltd/SM141K04TFV/14311388?s=N4IgTCBcDaIMoFkCMAWJBpADCgKgMQDUQBdAXyA">SM141K04TFV solar cells</a></li>
+<li>1× LED</li>
+<li>1.2 mm brass wire</li>
+<li>0.8 mm brass wire</li>
+<li>Wooden base</li>
+</ul>
+<p>For beginners I recommend this tutorial for <a href="https://create.arduino.cc/projecthub/arjun/programming-attiny85-with-arduino-uno-afb829">Programming an ATtiny85 with Arduino Uno</a>.</p>
+<h2>Software</h2>
+<p>Our goal is to minimize the power consumption of the microchip while charging the solar cells. To do this, we set the sleep mode to <code>SLEEP_MODE_PWR_DOWN</code>, which consumes the least power of all sleep modes. We also disable the analog to digital converter (<code>ADC</code>), since we don't use it and it would only consume extra power.</p>
+<p>The pinout of the ATtiny45 looks like this:</p>
+<pre class="language-txt"><code class="language-txt">            -|‾‾∪‾‾|-  Voltage (+)<br>            -|     |-  2 PIN_SOLAR_CELL<br>            -| •‿• |-  <br>(-) Ground  -|_____|-  0 PIN_LED</code></pre>
+<p>On Atmel chips, each pin not only has a pin number, but also a special interrupt number that allows you to assign an interrupt to a pin. If a low voltage is detected at this pin, an interrupt is triggered, which brings the device out of sleep mode. For pin 2 the interrupt number is 0.</p>
+<pre class="language-c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;avr/sleep.h></span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;avr/wdt.h></span></span><br><br><span class="token keyword">const</span> <span class="token keyword">int</span> PIN_SOLAR_CELL <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> <span class="token keyword">int</span> PIN_LED <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> <span class="token keyword">int</span> INTERRUPT_NR_SOLAR_CELLS <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br><br><span class="token keyword">void</span> <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token function">pinMode</span><span class="token punctuation">(</span>PIN_LED<span class="token punctuation">,</span> OUTPUT<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token function">pinMode</span><span class="token punctuation">(</span>PIN_SOLAR_CELL<span class="token punctuation">,</span> INPUT<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token function">set_sleep_mode</span><span class="token punctuation">(</span>SLEEP_MODE_PWR_DOWN<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token function">disableADC</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">// ADC is not needed and preserves energy if disabled</span><br><span class="token keyword">void</span> <span class="token function">disableADC</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  ADCSRA <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <br><span class="token punctuation">}</span></code></pre>
+<p>The program's main loop checks if the solar cells receive sunlight (have a high voltage) and thus charge the system. If so, the chip goes to sleep but attaches an interrupt to pin 2 before doing so. The interrupt wakes up the microchip up as soon as the solar cells stop receiving sunlight and the voltage on pin 2 drops low.</p>
+<pre class="language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">solarCellHasSunlight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token function">goToSleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span><br>    <span class="token function">flashLED</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><br>boolean <span class="token function">solarCellHasSunlight</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">digitalRead</span><span class="token punctuation">(</span>PIN_SOLAR_CELL<span class="token punctuation">)</span> <span class="token operator">==</span> HIGH<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">return</span> true<span class="token punctuation">;</span><br>  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span><br>    <span class="token keyword">return</span> false<span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">void</span> <span class="token function">goToSleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token function">attachInterrupt</span><span class="token punctuation">(</span>INTERRUPT_NR_SOLAR_CELLS<span class="token punctuation">,</span> handleInterrupt<span class="token punctuation">,</span> LOW<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token function">sleep_mode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">// Immediately detaches the interrupt to avoid endless interrupt cycles</span><br><span class="token keyword">void</span> <span class="token function">handleInterrupt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token function">detachInterrupt</span><span class="token punctuation">(</span>INTERRUPT_NR_SOLAR_CELLS<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">void</span> <span class="token function">flashLED</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token function">digitalWrite</span><span class="token punctuation">(</span>PIN_LED<span class="token punctuation">,</span> HIGH<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token function">sleep</span><span class="token punctuation">(</span>WDTO_60MS<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token function">digitalWrite</span><span class="token punctuation">(</span>PIN_LED<span class="token punctuation">,</span> LOW<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token function">sleep</span><span class="token punctuation">(</span>WDTO_60MS<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token function">digitalWrite</span><span class="token punctuation">(</span>PIN_LED<span class="token punctuation">,</span> HIGH<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token function">sleep</span><span class="token punctuation">(</span>WDTO_60MS<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token function">digitalWrite</span><span class="token punctuation">(</span>PIN_LED<span class="token punctuation">,</span> LOW<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token function">sleep</span><span class="token punctuation">(</span>WDTO_8S<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>As a small tweak to further save power, we replace Arduino's <code>delay()</code> function, which only counts CPU cycles, with a proper sleep mode that shuts down the device and wakes it up after a timer is triggered.</p>
+<p>The timer is the chip's watchdog clock, which interrupts the CPU once the countdown is over.</p>
+<pre class="language-c"><code class="language-c"><span class="token comment">// Uses sleep mode instead of a delay to preserve energy</span><br><span class="token keyword">void</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token keyword">int</span> time<span class="token punctuation">)</span><br><span class="token punctuation">{</span><br>  <span class="token function">wdt_enable</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token function">enableInterruptMode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token function">sleep_mode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">// Makes watchdog fire an interrupt instead of resetting the device</span><br><span class="token keyword">void</span> <span class="token function">enableInterruptMode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  WDTCR <span class="token operator">|=</span> <span class="token function">_BV</span><span class="token punctuation">(</span>WDIE<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">// Watchdog interrupt handler. Needs to deactivate watchdog in the first 15 ms</span><br><span class="token function">ISR</span><span class="token punctuation">(</span>WDT_vect<span class="token punctuation">)</span> <br><span class="token punctuation">{</span><br>  <span class="token function">clearInterruptFlags</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token function">wdt_disable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">void</span> <span class="token function">clearInterruptFlags</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  MCUSR <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>And that's it! Check out the full code here: <a href="https://gist.github.com/petermllrr/4d1f32c103d030856d1df86088ab2983">orion.ino</a></p>
+<p>To make sure everything works properly, you should wire everything up on a breadboard and try it out before you start on the hardware. Here is the schematic and how it looks on a breadboard:</p>
+<a href="/images/orion/lcgZSsxb_N-1400.webp">
+<picture><source type="image/avif" srcset="/images/orion/lcgZSsxb_N-700.avif 700w, /images/orion/lcgZSsxb_N-1400.avif 1400w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><source type="image/webp" srcset="/images/orion/lcgZSsxb_N-700.webp 700w, /images/orion/lcgZSsxb_N-1400.webp 1400w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><img alt="Circuit schemata of the project" loading="lazy" decoding="async" src="/images/orion/lcgZSsxb_N-700.webp" width="1400" height="556"></picture>
+</a>
+<h2>Hardware</h2>
+<p>Building the model is the hardest part: lots of wires need to be formed into perfect circles and the overall structure is really difficult to solder together. I started with the back part, the solar cells, and worked my way to the front part.Since I started with the solar cells, I could test the circuit at any time during the build, as it was already generating power.</p>
+<a href="/images/orion/xvJ4JvzOzR-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion/xvJ4JvzOzR-700.avif 700w, /images/orion/xvJ4JvzOzR-1400.avif 1400w, /images/orion/xvJ4JvzOzR-4032.avif 4032w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><source type="image/webp" srcset="/images/orion/xvJ4JvzOzR-700.webp 700w, /images/orion/xvJ4JvzOzR-1400.webp 1400w, /images/orion/xvJ4JvzOzR-4032.webp 4032w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><img alt="Half-assembled back panel with two solar cells connected. Two unconnected cells are lying next to it on a table." loading="lazy" decoding="async" src="/images/orion/xvJ4JvzOzR-700.webp" width="4032" height="3024"></picture>
+</a>
+<a href="/images/orion/bjdrF040lx-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion/bjdrF040lx-700.avif 700w, /images/orion/bjdrF040lx-1400.avif 1400w, /images/orion/bjdrF040lx-4032.avif 4032w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><source type="image/webp" srcset="/images/orion/bjdrF040lx-700.webp 700w, /images/orion/bjdrF040lx-1400.webp 1400w, /images/orion/bjdrF040lx-4032.webp 4032w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><img alt="Fully assembled back panel with all solar cells connected." loading="lazy" decoding="async" src="/images/orion/bjdrF040lx-700.webp" width="4032" height="3024"></picture>
+</a>
+<p>After the back plate was finished, I proceeded with the capacitors and diode. I decided to connect them first in a separate sub-assembly to make it easier to work with these components.</p>
+<a href="/images/orion/L7qBNHUXSo-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion/L7qBNHUXSo-700.avif 700w, /images/orion/L7qBNHUXSo-1400.avif 1400w, /images/orion/L7qBNHUXSo-4032.avif 4032w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><source type="image/webp" srcset="/images/orion/L7qBNHUXSo-700.webp 700w, /images/orion/L7qBNHUXSo-1400.webp 1400w, /images/orion/L7qBNHUXSo-4032.webp 4032w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><img alt="Subassembly of the capacitors and the diode." loading="lazy" decoding="async" src="/images/orion/L7qBNHUXSo-700.webp" width="4032" height="3024"></picture>
+</a>
+<p>Here the capacitors are inserted in the model. At this stage the solar engine is complete and already running.</p>
+<a href="/images/orion/IEj24k_ymt-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion/IEj24k_ymt-700.avif 700w, /images/orion/IEj24k_ymt-1400.avif 1400w, /images/orion/IEj24k_ymt-4032.avif 4032w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><source type="image/webp" srcset="/images/orion/IEj24k_ymt-700.webp 700w, /images/orion/IEj24k_ymt-1400.webp 1400w, /images/orion/IEj24k_ymt-4032.webp 4032w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><img alt="Capacitors inserted in the back of the model" loading="lazy" decoding="async" src="/images/orion/IEj24k_ymt-700.webp" width="4032" height="3024"></picture>
+</a>
+<p>I continued ed my way forward, inserting the microcontroller and finished the brass structure. Very happy with the results (ᵔᵕᵔ)/</p>
+<a href="/images/orion/wQVGfbH2yd-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion/wQVGfbH2yd-700.avif 700w, /images/orion/wQVGfbH2yd-1400.avif 1400w, /images/orion/wQVGfbH2yd-4032.avif 4032w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><source type="image/webp" srcset="/images/orion/wQVGfbH2yd-700.webp 700w, /images/orion/wQVGfbH2yd-1400.webp 1400w, /images/orion/wQVGfbH2yd-4032.webp 4032w" sizes="(max-width: 669px) 100vw, (min-width: 670) 670px"><img alt="Finished model on a table" loading="lazy" decoding="async" src="/images/orion/wQVGfbH2yd-700.webp" width="4032" height="3024"></picture>
+</a>
+<h2>Gallery</h2>
+<section class="gallery">
+<a href="/images/orion_gallery/w9JFfnKHp4-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion_gallery/w9JFfnKHp4-250.avif 250w, /images/orion_gallery/w9JFfnKHp4-450.avif 450w, /images/orion_gallery/w9JFfnKHp4-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/orion_gallery/w9JFfnKHp4-250.webp 250w, /images/orion_gallery/w9JFfnKHp4-450.webp 450w, /images/orion_gallery/w9JFfnKHp4-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Assembly of the back is finished" loading="lazy" decoding="async" src="/images/orion_gallery/w9JFfnKHp4-250.webp" width="4032" height="3024"></picture>
+</a>
+<a href="/images/orion_gallery/IJnzRBjr6v-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion_gallery/IJnzRBjr6v-250.avif 250w, /images/orion_gallery/IJnzRBjr6v-450.avif 450w, /images/orion_gallery/IJnzRBjr6v-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/orion_gallery/IJnzRBjr6v-250.webp 250w, /images/orion_gallery/IJnzRBjr6v-450.webp 450w, /images/orion_gallery/IJnzRBjr6v-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Inner rings attached" loading="lazy" decoding="async" src="/images/orion_gallery/IJnzRBjr6v-250.webp" width="4032" height="3024"></picture>
+</a>
+<a href="/images/orion_gallery/TCamOnUI2D-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion_gallery/TCamOnUI2D-250.avif 250w, /images/orion_gallery/TCamOnUI2D-450.avif 450w, /images/orion_gallery/TCamOnUI2D-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/orion_gallery/TCamOnUI2D-250.webp 250w, /images/orion_gallery/TCamOnUI2D-450.webp 450w, /images/orion_gallery/TCamOnUI2D-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Finished model in front of two houseplants" loading="lazy" decoding="async" src="/images/orion_gallery/TCamOnUI2D-250.webp" width="4032" height="3024"></picture>
+</a>
+<a href="/images/orion_gallery/WzHgTbDUAO-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion_gallery/WzHgTbDUAO-250.avif 250w, /images/orion_gallery/WzHgTbDUAO-450.avif 450w, /images/orion_gallery/WzHgTbDUAO-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/orion_gallery/WzHgTbDUAO-250.webp 250w, /images/orion_gallery/WzHgTbDUAO-450.webp 450w, /images/orion_gallery/WzHgTbDUAO-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Finished model in front of two houseplants, other perspective" loading="lazy" decoding="async" src="/images/orion_gallery/WzHgTbDUAO-250.webp" width="4032" height="3024"></picture>
+</a>
+<a href="/images/orion_gallery/G6CKFYBnz7-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion_gallery/G6CKFYBnz7-250.avif 250w, /images/orion_gallery/G6CKFYBnz7-450.avif 450w, /images/orion_gallery/G6CKFYBnz7-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/orion_gallery/G6CKFYBnz7-250.webp 250w, /images/orion_gallery/G6CKFYBnz7-450.webp 450w, /images/orion_gallery/G6CKFYBnz7-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Finished model on a table" loading="lazy" decoding="async" src="/images/orion_gallery/G6CKFYBnz7-250.webp" width="4032" height="3024"></picture>
+</a>
+<a href="/images/orion_gallery/x6CXogovDz-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion_gallery/x6CXogovDz-250.avif 250w, /images/orion_gallery/x6CXogovDz-450.avif 450w, /images/orion_gallery/x6CXogovDz-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/orion_gallery/x6CXogovDz-250.webp 250w, /images/orion_gallery/x6CXogovDz-450.webp 450w, /images/orion_gallery/x6CXogovDz-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="View from the top" loading="lazy" decoding="async" src="/images/orion_gallery/x6CXogovDz-250.webp" width="4032" height="3024"></picture>
+</a>
+<a href="/images/orion_gallery/yIoPmHr0PH-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion_gallery/yIoPmHr0PH-250.avif 250w, /images/orion_gallery/yIoPmHr0PH-450.avif 450w, /images/orion_gallery/yIoPmHr0PH-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/orion_gallery/yIoPmHr0PH-250.webp 250w, /images/orion_gallery/yIoPmHr0PH-450.webp 450w, /images/orion_gallery/yIoPmHr0PH-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="View from the bottom" loading="lazy" decoding="async" src="/images/orion_gallery/yIoPmHr0PH-250.webp" width="4032" height="3024"></picture>
+</a>
+<a href="/images/orion_gallery/5ohQ1yEhWo-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion_gallery/5ohQ1yEhWo-250.avif 250w, /images/orion_gallery/5ohQ1yEhWo-450.avif 450w, /images/orion_gallery/5ohQ1yEhWo-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/orion_gallery/5ohQ1yEhWo-250.webp 250w, /images/orion_gallery/5ohQ1yEhWo-450.webp 450w, /images/orion_gallery/5ohQ1yEhWo-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="View from the front left, showing details" loading="lazy" decoding="async" src="/images/orion_gallery/5ohQ1yEhWo-250.webp" width="4032" height="3024"></picture>
+</a>
+<a href="/images/orion_gallery/GTRBm9_o-V-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion_gallery/GTRBm9_o-V-250.avif 250w, /images/orion_gallery/GTRBm9_o-V-450.avif 450w, /images/orion_gallery/GTRBm9_o-V-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/orion_gallery/GTRBm9_o-V-250.webp 250w, /images/orion_gallery/GTRBm9_o-V-450.webp 450w, /images/orion_gallery/GTRBm9_o-V-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="View from the back, showing my horrible soldering skills" loading="lazy" decoding="async" src="/images/orion_gallery/GTRBm9_o-V-250.webp" width="4032" height="3024"></picture>
+</a>
+<a href="/images/orion_gallery/87fgU3vzmj-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion_gallery/87fgU3vzmj-250.avif 250w, /images/orion_gallery/87fgU3vzmj-450.avif 450w, /images/orion_gallery/87fgU3vzmj-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/orion_gallery/87fgU3vzmj-250.webp 250w, /images/orion_gallery/87fgU3vzmj-450.webp 450w, /images/orion_gallery/87fgU3vzmj-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Close-up shot from the front right" loading="lazy" decoding="async" src="/images/orion_gallery/87fgU3vzmj-250.webp" width="4032" height="3024"></picture>
+</a>
+<a href="/images/orion_gallery/XRyeFUu6p2-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion_gallery/XRyeFUu6p2-250.avif 250w, /images/orion_gallery/XRyeFUu6p2-450.avif 450w, /images/orion_gallery/XRyeFUu6p2-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/orion_gallery/XRyeFUu6p2-250.webp 250w, /images/orion_gallery/XRyeFUu6p2-450.webp 450w, /images/orion_gallery/XRyeFUu6p2-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Clean shot from the front on front of a black background" loading="lazy" decoding="async" src="/images/orion_gallery/XRyeFUu6p2-250.webp" width="4032" height="3024"></picture>
+</a>
+<a href="/images/orion_gallery/hFqZLkANeq-4032.webp">
+<picture><source type="image/avif" srcset="/images/orion_gallery/hFqZLkANeq-250.avif 250w, /images/orion_gallery/hFqZLkANeq-450.avif 450w, /images/orion_gallery/hFqZLkANeq-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><source type="image/webp" srcset="/images/orion_gallery/hFqZLkANeq-250.webp 250w, /images/orion_gallery/hFqZLkANeq-450.webp 450w, /images/orion_gallery/hFqZLkANeq-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
+          (min-width: 670px) 228px"><img alt="Assembled model from the top on my desk" loading="lazy" decoding="async" src="/images/orion_gallery/hFqZLkANeq-250.webp" width="4032" height="3024"></picture>
+</a>
+</section>
+<nav>
+<h2>More projects</h2>
+<p><a href="/project/smolsat_1/">SMOLSAT-1</a></p>
+</nav>
+</main>
+<footer>
+<p>
+--<br>
+Peter Müller © 2022 - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a><br>
+Last updated: <time datetime="2022-04-10">April 10, 2022</time> - <a href="https://github.com/petermllrr/Smol-Space-Program">GitHub</a>
+</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "**/css/*.njk": "css",
+        "**/headers/*.njk": "html",
+        "**/components/*.njk": "html",
+        "**/_includes/*.njk": "html"
+    }
+}

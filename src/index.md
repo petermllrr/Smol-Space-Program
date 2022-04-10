@@ -4,7 +4,7 @@ title: Smol Space Program
 description: Tiny spacecraft made of microelectronics and wire. By Peter Müller.
 ---
 
-<figure>
+<figure class="asciiart">
 <figcaption>Smol Space Program ASCII art</figcaption>
 <pre>
          .                      .
@@ -37,7 +37,7 @@ __)|   /--\\__|__
 # Smol Space Program
 
 I build small, cute spacecraft from microelectronics, wire and lots of solder.
-These models are mostly useless, but nice to look at. On this page I upload
+These models are mostly useless, but nice to look at. On this site I'll upload
 pictures and build reports.
 
 ## 🛰 Gallery
@@ -50,11 +50,8 @@ pictures and build reports.
 
 ## 👩‍🚀 Author
 
-Peter Müller
-
-* [Web][1]
-* <a rel="me" href="https://mstdn.social/@bearislive">Mastodon</a>
-* [Twitter][2]
+Peter Müller<br>
+[Web][1] - <a rel="me" href="https://mstdn.social/@bearislive">Mastodon</a> - [Twitter][2]
 
 [1]: https://www.petermueller.io
 [2]: https://twitter.com/petermllrr

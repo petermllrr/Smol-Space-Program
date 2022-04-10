@@ -1,12 +1,14 @@
 html {
   font-family: ui-monospace,
                "SF Mono",
+               Menlo,
                Monaco,
                "Roboto Mono",
                Consolas,
                "Liberation Mono",
                "DejaVu Sans Mono",
                monospace;
+  font-size: 15px;
 }
 
 @media (max-width: 600px) {
@@ -15,9 +17,48 @@ html {
   }
 }
 
+main {
+  margin: 0 auto;
+  max-width: 700px;
+  padding-block-start: 2em;
+}
+
+footer {
+  margin: 0 auto;
+  max-width: 700px;
+  padding-block-start: 1em;
+}
+
+a, p {
+  line-height: 1.5;
+}
+
+p {
+  margin-block-start: 2em;
+  margin-block-end: 2em;
+}
+
+h1 {
+  margin-block-start: 1.3em;
+}
+
+h2 {
+  margin-block-start: 1.83em;
+}
+
+ul {
+  line-height: 1.7em;
+  padding-inline-start: 1em;
+}
+
+pre {
+  font-size: 0.8em;
+  overflow: auto;
+}
+
 @media (prefers-color-scheme: light) {
   html {
-    background-color: #e5e1dd;
+    background-color: #f0eff5;
     color: #231d61;
     color-scheme: light;
   }
@@ -38,7 +79,7 @@ html {
 @media (prefers-color-scheme: dark) {
   html {
     background-color: #292c3b;
-    color: #e4f6fc;
+    color: #d5d8e7;
     color-scheme: dark;
   }
 
@@ -53,32 +94,4 @@ html {
   hr {
     border: .5px solid #e4f6fc;
   }
-}
-
-main {
-  margin: 0 auto;
-  max-width: 640px;
-  padding-block-start: 2em;
-}
-
-footer {
-  margin: 0 auto;
-  max-width: 640px;
-  padding-block-start: 1.2em;
-}
-
-a, p {
-  line-height: 1.4;
-}
-
-h1 {
-  margin-block-start: 1.3em;
-}
-
-h2 {
-  margin-block-start: 1.83em;
-}
-
-ul {
-  padding-inline-start: 1em;
 }

@@ -1,10 +1,8 @@
 const Image = require("@11ty/eleventy-img");
 const { readdirSync, statSync, readFileSync } = require("fs");
 const path = require("path");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
-/**
- * The input directory
- */
 const INPUTDIR = "src";
 
 module.exports = function(eleventyConfig) {
@@ -19,6 +17,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addJavaScriptFunction("svg", svgShortcode);
 
   eleventyConfig.addPassthroughCopy(INPUTDIR + "/favicon-32x32.png");
+
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   createImageGalleries(eleventyConfig);
 
@@ -171,48 +171,42 @@ function generateCollections(collections,
   }
 }
 
-/**
- * Generates avif and webp images. Taken from
- * https://www.11ty.dev/docs/plugins/image/#use-this-in-your-templates
- * 
- * @param {String} src    filepath to the source image
- * @param {String} alt    alt text
- * @param {Array}  widths the image width which should be generated
- * @param {Array}  sizes  sizes attribute
- * @returns 
- */
-async function imageShortcode(src, alt, widths, sizes = "100vw") {
+async function imageShortcode(
+  src,
+  alt,
+  sizes="(max-width: 669px) 100vw, (min-width: 670) 670px",
+  width=[700, 1400, 4032]
+  ) {
   console.log("Processing " + src);
-  
-  if(alt === undefined) {
-    throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
-  }
 
   src = INPUTDIR + "/" + src;
 
-  let metadata = await Image( src, {
-    widths: widths,
-    formats: ["avif", "webp"],
+  let metadata = await Image(src, {
+    widths: width,
+    formats: ["svg", "avif", "webp"],
     outputDir: "./_site/images/" + getThirdPathSegment(src),
-    urlPath: "/images/" + getThirdPathSegment(src)
+    urlPath: "/images/" + getThirdPathSegment(src),
+    svgShortCircuit: true
   });
 
-  let lowsrc = metadata.webp[0];
-  let highsrc = metadata.webp[metadata.webp.length - 1];
+  let imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async"
+  };
 
+  let highsrc;
+
+  if (metadata.svg.length == 0) {
+    highsrc = metadata.webp[metadata.webp.length - 1];
+  } else {
+    highsrc = metadata.svg[metadata.svg.length - 1];
+  }
+  
   return `<a href="${highsrc.url}">
-<picture>
-${Object.values(metadata).map(imageFormat => {
-  return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`;
-}).join("\n")}
-  <img src="${lowsrc.url}"
-       width="${highsrc.width}"
-       height="${highsrc.height}"
-       alt="${alt}"
-       loading="lazy"
-       decoding="async">
-</picture>
-</a>`;
+${Image.generateHTML(metadata, imageAttributes)}
+</a>`
 }
 
 async function svgShortcode(src, alt, sizes = "100vw") {

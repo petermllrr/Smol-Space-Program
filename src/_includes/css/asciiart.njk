@@ -1,12 +1,18 @@
-figure {
+.asciiart, figure {
   margin: 0;
 }
 
-figcaption {
+.asciiart figcaption {
   display: none;
 }
 
-pre {
+.asciiart pre {
   font-size: 13px;
   font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .asciiart pre {
+    font-size: 12px;
+  }
 }

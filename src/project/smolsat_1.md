@@ -7,8 +7,7 @@ gallery: smolsat_1_gallery
 date: 2022-02-05
 ---
 
-{% assign widths = "640, 1280, 4032" | split: ',' -%}
-{% image "images/smolsat_1/PXL_20220212_142420014.PORTRAIT.jpg", "SMOLSAT-1 completely assembled", widths, "(max-width: 639px) 100vw, (min-width: 640px) 640px" %}
+{% image "images/smolsat_1/PXL_20220212_142420014.PORTRAIT.jpg", "SMOLSAT-1 completely assembled" %}
 
 The first member of the Smol Space Program 🪐✨. This model runs on solar cells
 and flashes a LED light. If charged in direct sunlight it can run for almost
@@ -31,18 +30,15 @@ and 80&nbsp;mm wide walnut wood base.
 
 ## Links
 
-[Microcontroller code][3]
-
-[Mohid Bhoite's Tiny Cube Sat][1]
-
-[IXYS solar cells][2]
+- [Microcontroller code][3]
+- [Mohid Bhoite's Tiny Cube Sat][1]
+- [IXYS solar cells][2]
 
 ## Schematics
 
-{% svg "images/smolsat_1/layout.svg", "Wiring layout" %}
+{% image "images/smolsat_1/layout.svg", "Wiring layout" %}
 
-{% assign widths = "640, 1280, 3066" | split: ',' -%}
-{% image "images/smolsat_1/schematics.png", "Schematics", widths, "(max-width: 639px) 100vw, (min-width: 640px) 640px" %}
+{% image "images/smolsat_1/schematics.png", "Schematics" %}
 
 [1]: https://www.bhoite.com/sculptures/tiny-cube-sat/
 [2]: https://www.digikey.de/en/products/detail/anysolar-ltd/SM111K06L/9990436

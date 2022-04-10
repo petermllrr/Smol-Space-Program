@@ -1,6 +1,5 @@
 .DS_store
 node_modules
-.vscode
 
 _site/*
 !_site/images

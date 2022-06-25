@@ -1,4 +1,7 @@
 html {
+  background-color: #292c3b;
+  color: #E2E2E5;
+  color-scheme: dark;
   font-family: ui-monospace,
                "SF Mono",
                Menlo,
@@ -29,11 +32,17 @@ footer {
   padding-block-start: 1em;
 }
 
-a, p {
+a {
+  color: #8BCEFF;
   line-height: 1.5;
 }
 
+a:hover {
+  color: White;
+}
+
 p {
+  line-height: 1.5;
   margin-block-start: 2em;
   margin-block-end: 2em;
 }
@@ -52,46 +61,7 @@ ul {
 }
 
 pre {
+  color: #8BCEFF;
   font-size: 0.8em;
   overflow: auto;
-}
-
-@media (prefers-color-scheme: light) {
-  html {
-    background-color: #f0eff5;
-    color: #231d61;
-    color-scheme: light;
-  }
-
-  a, pre {
-    color: #124cf3;
-  }
-
-  a:hover {
-    color: #577cee;
-  }
-
-  hr {
-    border: .5px solid #231d61;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    background-color: #292c3b;
-    color: #d5d8e7;
-    color-scheme: dark;
-  }
-
-  a, pre {
-    color: #4fbcff;
-  }
-
-  a:hover {
-    color: White;
-  }
-
-  hr {
-    border: .5px solid #e4f6fc;
-  }
 }

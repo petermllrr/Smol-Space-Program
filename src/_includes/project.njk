@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="color-scheme: dark">
 {% include "headers/head_project.njk" %}
-<body>
+<body class="font-mono max-w-2xl mx-auto bg-gray-800 text-white px-3 prose prose-invert prose-a:text-blue-300 prose-ul:pl-4 prose-ul:leading-5 prose-p:leading-6 prose-img:rounded prose-sm sm:prose-base">
 <main>
-<nav class="menu">
+<nav class="my-8">
   <span role="presentation">◀ </span><a href="/">Home</a>
 </nav>
 <h1>{{title}}</h1>
@@ -11,7 +11,7 @@
 {{ content | safe }}
 {% if gallery -%}
 <h2>Gallery</h2>
-<section class="gallery">
+<section class="grid grid-cols-3 gap-3 prose-img:my-0 sm:prose-img:my-0">
 {% for img in collections[gallery] -%}
 {% image img.url,
          img.alt,

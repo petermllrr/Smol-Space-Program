@@ -4,9 +4,9 @@ title: Smol Space Program
 description: Tiny spacecraft made of microelectronics and wire. By Peter Müller.
 ---
 
-<figure class="asciiart">
-<figcaption>Smol Space Program ASCII art</figcaption>
-<pre>
+<figure class="not-prose mb-10 mt-0">
+<figcaption class="hidden">Smol Space Program ASCII art</figcaption>
+<pre class="text-sm text-sky-300">
          .                      .
          .                      ;
          :                  - --+- -

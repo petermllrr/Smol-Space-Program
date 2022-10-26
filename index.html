@@ -1,107 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="color-scheme: dark">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Tiny spacecraft made of microelectronics and wire. By Peter Müller.">
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#e5e1dd" />
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#292c3b" />
 <link rel="icon" href="/favicon-32x32.png" type="image/png">
-<style>
-html {
-  background-color: #292c3b;
-  color: #E2E2E5;
-  color-scheme: dark;
-  font-family: ui-monospace,
-               "SF Mono",
-               Menlo,
-               Monaco,
-               "Roboto Mono",
-               Consolas,
-               "Liberation Mono",
-               "DejaVu Sans Mono",
-               monospace;
-  font-size: 16px;
-}
-
-@media (max-width: 600px) {
-  html {
-    font-size: 14.5px;
+<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        typography: ({ theme }) => ({
+          'prose-gray': {
+            css: {
+              '--tw-prose-invert-bullets': theme('colors.white'),
+              '--tw-prose-bullets': theme('colors.white')
+            },
+          },
+        }),
+      },
+    },
   }
-}
-
-main {
-  margin: 0 auto;
-  max-width: 700px;
-  padding-block-start: 2em;
-}
-
-footer {
-  margin: 0 auto;
-  max-width: 700px;
-  padding-block-start: 1em;
-}
-
-a {
-  color: #8BCEFF;
-  line-height: 1.5;
-}
-
-a:hover {
-  color: White;
-}
-
-p {
-  line-height: 1.5;
-  margin-block-start: 2em;
-  margin-block-end: 2em;
-}
-
-h1 {
-  margin-block-start: 1.3em;
-}
-
-h2 {
-  margin-block-start: 1.83em;
-}
-
-ul {
-  line-height: 1.7em;
-  padding-inline-start: 1em;
-}
-
-pre {
-  color: #8BCEFF;
-  font-size: 0.8em;
-  overflow: auto;
-}
-.asciiart, figure {
-  margin: 0;
-}
-
-.asciiart figcaption {
-  display: none;
-}
-
-.asciiart pre {
-  font-size: 13px;
-  font-weight: bold;
-}
-
-@media (max-width: 600px) {
-  .asciiart pre {
-    font-size: 12px;
-  }
-}
-</style>
+</script>
 <title>Smol Space Program</title>
 </head>
-<body>
+<body class="font-mono max-w-2xl mx-auto bg-gray-800 text-white py-16 px-3 prose prose-invert prose-a:text-blue-300 prose-ul:pl-4 prose-ul:leading-5 prose-p:leading-6">
 <main>
-<figure class="asciiart">
-<figcaption>Smol Space Program ASCII art</figcaption>
-<pre>
+<figure class="not-prose mb-10 mt-0">
+<figcaption class="hidden">Smol Space Program ASCII art</figcaption>
+<pre class="text-sm text-sky-300">
          .                      .
          .                      ;
          :                  - --+- -
@@ -140,11 +70,11 @@ pictures and build reports.</p>
 <p>Peter Müller<br>
 <a href="https://www.petermueller.io">Web</a> - <a rel="me" href="https://mstdn.social/@bearislive">Mastodon</a> - <a href="https://twitter.com/petermllrr">Twitter</a></p>
 </main>
-<footer>
+<footer class="pt-8">
 <p>
 --<br>
 Peter Müller © 2022 - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a><br>
-Last updated: <time datetime="2022-06-25">June 25, 2022</time> - <a href="https://github.com/petermllrr/Smol-Space-Program">GitHub</a>
+Last updated: <time datetime="2022-10-26">October 26, 2022</time> - <a href="https://github.com/petermllrr/Smol-Space-Program">GitHub</a>
 </p>
 </footer>
 </body>

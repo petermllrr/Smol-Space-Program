@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="color-scheme: dark">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,97 +9,6 @@
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#292c3b" />
 <link rel="icon" href="/favicon-32x32.png" type="image/png">
 <style>
-html {
-  background-color: #292c3b;
-  color: #E2E2E5;
-  color-scheme: dark;
-  font-family: ui-monospace,
-               "SF Mono",
-               Menlo,
-               Monaco,
-               "Roboto Mono",
-               Consolas,
-               "Liberation Mono",
-               "DejaVu Sans Mono",
-               monospace;
-  font-size: 16px;
-}
-
-@media (max-width: 600px) {
-  html {
-    font-size: 14.5px;
-  }
-}
-
-main {
-  margin: 0 auto;
-  max-width: 700px;
-  padding-block-start: 2em;
-}
-
-footer {
-  margin: 0 auto;
-  max-width: 700px;
-  padding-block-start: 1em;
-}
-
-a {
-  color: #8BCEFF;
-  line-height: 1.5;
-}
-
-a:hover {
-  color: White;
-}
-
-p {
-  line-height: 1.5;
-  margin-block-start: 2em;
-  margin-block-end: 2em;
-}
-
-h1 {
-  margin-block-start: 1.3em;
-}
-
-h2 {
-  margin-block-start: 1.83em;
-}
-
-ul {
-  line-height: 1.7em;
-  padding-inline-start: 1em;
-}
-
-pre {
-  color: #8BCEFF;
-  font-size: 0.8em;
-  overflow: auto;
-}
-img {
-  border-radius: .3em;
-  height: auto;
-  width: 100%;
-}
-
-picture {
-  display: block;
-  margin-block-end: 1em;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; 
-  gap: .5em;
-}
-
-.gallery picture {
-  margin-block-end: -.25em;
-}
-
-.gallery img {
-  border-radius: 0.2em;
-}
 p > code {
     border-radius: 0.3em;
     font-size: 0.9em;
@@ -227,11 +136,12 @@ pre[class*=language-] {
     cursor: help
 }
 </style>
+<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
 <title>SMOLSAT-1</title>
 </head>
-<body>
+<body class="font-mono max-w-2xl mx-auto bg-gray-800 text-white px-3 prose prose-invert prose-a:text-blue-300 prose-ul:pl-4 prose-ul:leading-5 prose-p:leading-6 prose-img:rounded prose-sm sm:prose-base">
 <main>
-<nav class="menu">
+<nav class="my-8">
   <span role="presentation">◀ </span><a href="/">Home</a>
 </nav>
 <h1>SMOLSAT-1</h1>
@@ -269,7 +179,7 @@ and 80 mm wide walnut wood base.</p>
 </a>
 
 <h2>Gallery</h2>
-<section class="gallery">
+<section class="grid grid-cols-3 gap-3 prose-img:my-0 sm:prose-img:my-0">
 <a href="/images/smolsat_1_gallery/OkxSwW0Wlo-4032.webp">
 <picture><source type="image/avif" srcset="/images/smolsat_1_gallery/OkxSwW0Wlo-250.avif 250w, /images/smolsat_1_gallery/OkxSwW0Wlo-450.avif 450w, /images/smolsat_1_gallery/OkxSwW0Wlo-4032.avif 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
           (min-width: 670px) 228px"><source type="image/webp" srcset="/images/smolsat_1_gallery/OkxSwW0Wlo-250.webp 250w, /images/smolsat_1_gallery/OkxSwW0Wlo-450.webp 450w, /images/smolsat_1_gallery/OkxSwW0Wlo-4032.webp 4032w" sizes="(max-width: 669px) calc((100vw / 3) - 2em - 16px),
@@ -411,11 +321,11 @@ and 80 mm wide walnut wood base.</p>
 <p><a href="/project/orion/">ORION</a></p>
 </nav>
 </main>
-<footer>
+<footer class="pt-8">
 <p>
 --<br>
 Peter Müller © 2022 - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a><br>
-Last updated: <time datetime="2022-06-25">June 25, 2022</time> - <a href="https://github.com/petermllrr/Smol-Space-Program">GitHub</a>
+Last updated: <time datetime="2022-10-26">October 26, 2022</time> - <a href="https://github.com/petermllrr/Smol-Space-Program">GitHub</a>
 </p>
 </footer>
 </body>

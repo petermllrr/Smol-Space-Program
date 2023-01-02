@@ -1,7 +1,7 @@
 ---
-layout: home.njk
 title: Smol Space Program
 description: Tiny spacecraft made of microelectronics and wire. By Peter Müller.
+layout: "layouts/home.njk"
 ---
 
 <figure class="asciiart">
@@ -42,16 +42,11 @@ pictures and build reports.
 
 ## 🛰 Gallery
 
-<ul>
-{% for project in collections.project -%}
-<li><a href="{{ project.url }}">{{ project.data.title }}</a></li>
+{% for project in collections.project %}
+- [{{ project.data.title }}]({{ project.url }})
 {%- endfor %}
-</ul>
 
 ## 👩‍🚀 Author
 
 Peter Müller<br>
-[Web][1] - <a rel="me" href="https://mstdn.social/@bearislive">Mastodon</a> - [Twitter][2]
-
-[1]: https://www.petermueller.io
-[2]: https://twitter.com/petermllrr
+[Web](https://www.petermueller.io) - <a rel="me" href="https://mstdn.social/@bearislive">Mastodon</a>

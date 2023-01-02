@@ -2,12 +2,12 @@
 title: ORION
 description: A smol replica of NASA's Orion spacecraft.
 date: 2022-03-19
-layout: project
+layout: "layouts/project.njk"
 tags: project
 gallery: orion
 ---
 
-<h1>{{title}}</h1>
+<h1>{{ title }}</h1>
 
 <p>Peter Müller, {{ page.date | format }}</p>
 

@@ -1,0 +1,31 @@
+{% extends "layouts/base.njk" %}
+
+{% block head %}
+  {% include "headers/project.njk" %}
+{% endblock %}
+
+{% block maincontent %}
+  <nav class="menu">
+    <span role="presentation">◀ </span><a href="/">Home</a>
+  </nav>
+
+  {{ content | safe }}
+    
+  {% if gallery %}
+    <h2>Gallery</h2>
+    <div class="gallery">
+      {% for img in galleries[gallery] %}
+        {% image img.src, img.alt, "(max-width: 669px) calc((100vw / 3) - 2em - 16px), (min-width: 670px) 228px", [250, 450, 4032] %}
+      {% endfor %}
+    </div>
+  {% endif %}
+    
+  <nav>
+    <h2>More projects</h2>
+    {% for project in collections.project %}
+      {% if project.data.title != title %}
+        <p><a href="{{ project.url }}">{{ project.data.title }}</a></p>
+      {% endif %}
+    {% endfor %}
+  </nav>
+{% endblock %}

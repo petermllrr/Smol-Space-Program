@@ -1,37 +1,117 @@
 <!DOCTYPE html>
-<html lang="en" style="color-scheme: dark">
-<head>
+<html lang="en">
+
+
+    <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Tiny spacecraft made of microelectronics and wire. By Peter Müller.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#e5e1dd" />
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#292c3b" />
 <link rel="icon" href="/favicon-32x32.png" type="image/png">
-<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-<script>
-  tailwind.config = {
-    darkMode: 'class',
-    theme: {
-      extend: {
-        typography: ({ theme }) => ({
-          'prose-gray': {
-            css: {
-              '--tw-prose-invert-bullets': theme('colors.white'),
-              '--tw-prose-bullets': theme('colors.white')
-            },
-          },
-        }),
-      },
-    },
+<style>
+
+
+    html {
+  background-color: #1f2937;
+  color: #fff;
+  color-scheme: dark;
+  font-family: ui-monospace,
+               "SF Mono",
+               Menlo,
+               Monaco,
+               "Roboto Mono",
+               Consolas,
+               "Liberation Mono",
+               "DejaVu Sans Mono",
+               monospace;
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14.5px;
   }
-</script>
+}
+
+body {
+  max-width: 42em;
+  padding: 3em 0.75em 4em;
+  margin: 0 auto;
+}
+
+footer {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 2em 0 0;
+}
+
+a {
+  color: #93c5fd;
+  line-height: 1.5;
+}
+
+a:hover {
+  color: White;
+}
+
+p {
+  line-height: 1.5;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+h1 {
+  margin-top: 1.3em;
+}
+
+h2 {
+  margin-top: 1.83em;
+}
+
+ul {
+  line-height: 1.7em;
+  padding-inline-start: 1em;
+}
+
+pre {
+  color: #8BCEFF;
+  font-size: 0.8em;
+  overflow: auto;
+}
+    .asciiart, figure {
+  margin: 0;
+}
+
+.asciiart figcaption {
+  display: none;
+}
+
+.asciiart pre {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .asciiart pre {
+    font-size: 12px;
+  }
+}
+
+
+</style>
 <title>Smol Space Program</title>
 </head>
-<body class="font-mono max-w-2xl mx-auto bg-gray-800 text-white py-16 px-3 prose prose-invert prose-a:text-blue-300 prose-ul:pl-4 prose-ul:leading-5 prose-p:leading-6">
+
+
+<body>
 <main>
-<figure class="not-prose mb-10 mt-0">
-<figcaption class="hidden">Smol Space Program ASCII art</figcaption>
-<pre class="text-sm text-sky-300">
+
+
+    <figure class="asciiart">
+<figcaption>Smol Space Program ASCII art</figcaption>
+<pre>
          .                      .
          .                      ;
          :                  - --+- -
@@ -64,18 +144,22 @@ These models are mostly useless, but nice to look at. On this site I'll upload
 pictures and build reports.</p>
 <h2>🛰 Gallery</h2>
 <ul>
-<li><a href="/project/smolsat_1/">SMOLSAT-1</a></li><li><a href="/project/orion/">ORION</a></li>
+<li><a href="/project/smolsat_1/">SMOLSAT-1</a></li>
+<li><a href="/project/orion/">ORION</a></li>
 </ul>
 <h2>👩‍🚀 Author</h2>
 <p>Peter Müller<br>
-<a href="https://www.petermueller.io">Web</a> - <a rel="me" href="https://mstdn.social/@bearislive">Mastodon</a> - <a href="https://twitter.com/petermllrr">Twitter</a></p>
+<a href="https://www.petermueller.io">Web</a> - <a rel="me" href="https://mstdn.social/@bearislive">Mastodon</a></p>
+
+
 </main>
-<footer class="pt-8">
-<p>
---<br>
-Peter Müller © 2022 - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a><br>
-Last updated: <time datetime="2022-10-26">October 26, 2022</time> - <a href="https://github.com/petermllrr/Smol-Space-Program">GitHub</a>
-</p>
+
+<footer>
+    --<br>
+    Peter Müller © <time datetime="2023">2023</time> - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>
+    <br>
+    Last updated: <time datetime="2023-01-02">January 2, 2023</time> - <a href="https://github.com/petermllrr/Smol-Space-Program">GitHub</a>
 </footer>
+
 </body>
 </html>

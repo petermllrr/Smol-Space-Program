@@ -3,32 +3,31 @@
 {% include "headers/head_project.njk" %}
 <body>
 <main>
+
 <nav class="menu">
   <span role="presentation">◀ </span><a href="/">Home</a>
 </nav>
-<h1>{{title}}</h1>
-<p>Peter Müller, {% date %}</p>
+
 {{ content | safe }}
-{% if gallery -%}
-<h2>Gallery</h2>
-<section class="gallery">
-{% for img in collections[gallery] -%}
-{% image img.url,
-         img.alt,
-         "(max-width: 669px) calc((100vw / 3) - 2em - 16px),
-          (min-width: 670px) 228px",
-          [250, 450, 4032] %}
-{% endfor -%}
-{% endif -%}
-</section>
+  
+{% if gallery %}
+  <h2>Gallery</h2>
+  <div class="gallery">
+    {% for img in galleries[gallery] %}
+      {% image img.src, img.alt, "(max-width: 669px) calc((100vw / 3) - 2em - 16px), (min-width: 670px) 228px", [250, 450, 4032] %}
+    {% endfor %}
+  </div>
+{% endif %}
+  
 <nav>
-<h2>More projects</h2>
-{% for project in collections.project -%}
-{% if project.data.title != title -%}
-<p><a href="{{ project.url }}">{{ project.data.title }}</a></p>
-{% endif -%}
-{% endfor -%}
+  <h2>More projects</h2>
+  {% for project in collections.project %}
+    {% if project.data.title != title %}
+      <p><a href="{{ project.url }}">{{ project.data.title }}</a></p>
+    {% endif %}
+  {% endfor %}
 </nav>
+
 </main>
 {% include "components/footer.njk" %}
 </body>

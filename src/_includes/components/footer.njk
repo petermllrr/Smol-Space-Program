@@ -1,7 +1,7 @@
 <footer>
 <p>
 --<br>
-Peter Müller © {% date "year" %} - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a><br>
-Last updated: {% date "today" %} - <a href="https://github.com/petermllrr/Smol-Space-Program">GitHub</a>
+Peter Müller © <time datetime="{{ now.year }}">{{ now.year }}</time> - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a><br>
+Last updated: <time datetime="{{ now.yyyymmdd }}">{{ now.formatted }}</time> - <a href="https://github.com/petermllrr/Smol-Space-Program">GitHub</a>
 </p>
 </footer>

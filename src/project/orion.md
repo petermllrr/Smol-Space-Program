@@ -1,15 +1,19 @@
 ---
-tags: project
-layout: project
 title: ORION
 description: A smol replica of NASA's Orion spacecraft.
-gallery: orion_gallery
 date: 2022-03-19
+layout: project
+tags: project
+gallery: orion
 ---
 
-{% image "images/orion/PXL_20220319_114901965.jpg", "Fully assembled ORION model" %}
+<h1>{{title}}</h1>
 
-{% image "images/orion/22734689337_511ef9df09_o.jpg", "Rendering of ORION spacecraft in orbit above the earth. Image credit NASA." %}
+<p>Peter Müller, {{ page.date | format }}</p>
+
+{% image "src/images/orion/PXL_20220319_114901965.jpg", "Fully assembled ORION model" %}
+
+{% image "src/images/orion/22734689337_511ef9df09_o.jpg", "Rendering of ORION spacecraft in orbit above the earth. Image credit NASA." %}
 
 Earlier this month, Artemis 1 rolled out of NASA's rocket assembly bay and slowly moved towards the launch pad. The Artemis mission will launch an uncrewed Orion spacecraft and 13 tiny cube satellites to the moon. Once there, Orion will orbit the moon for up to 23 days until returning to earth and splash down into the ocean.
 
@@ -144,24 +148,24 @@ And that's it! Check out the full code here: [orion.ino](https://gist.github.com
 
 To make sure everything works properly, you should wire everything up on a breadboard and try it out before you start on the hardware. Here is the schematic and how it looks on a breadboard:
 
-{% image "images/orion/orion_scheme.png", "Circuit schemata of the project" %}
+{% image "src/images/orion/orion_scheme.png", "Circuit schemata of the project" %}
 
 ## Hardware
 
 Building the model is the hardest part: lots of wires need to be formed into perfect circles and the overall structure is really difficult to solder together. I started with the back part, the solar cells, and worked my way to the front part.Since I started with the solar cells, I could test the circuit at any time during the build, as it was already generating power.
 
-{% image "images/orion/PXL_20220312_194724736.jpg", "Half-assembled back panel with two solar cells connected. Two unconnected cells are lying next to it on a table." %}
+{% image "src/images/orion/PXL_20220312_194724736.jpg", "Half-assembled back panel with two solar cells connected. Two unconnected cells are lying next to it on a table." %}
 
-{% image "images/orion/PXL_20220312_210332867.jpg", "Fully assembled back panel with all solar cells connected." %}
+{% image "src/images/orion/PXL_20220312_210332867.jpg", "Fully assembled back panel with all solar cells connected." %}
 
 After the back plate was finished, I proceeded with the capacitors and diode. I decided to connect them first in a separate sub-assembly to make it easier to work with these components.
 
-{% image "images/orion/PXL_20220313_144238963.jpg", "Subassembly of the capacitors and the diode." %}
+{% image "src/images/orion/PXL_20220313_144238963.jpg", "Subassembly of the capacitors and the diode." %}
 
 Here the capacitors are inserted in the model. At this stage the solar engine is complete and already running.
 
-{% image "images/orion/PXL_20220314_134628251.NIGHT.jpg", "Capacitors inserted in the back of the model" %}
+{% image "src/images/orion/PXL_20220314_134628251.NIGHT.jpg", "Capacitors inserted in the back of the model" %}
 
 I continued ed my way forward, inserting the microcontroller and finished the brass structure. Very happy with the results \(ᵔᵕᵔ)/
 
-{% image "images/orion/PXL_20220319_111732487.PORTRAIT.jpg", "Finished model on a table" %}
+{% image "src/images/orion/PXL_20220319_111732487.PORTRAIT.jpg", "Finished model on a table" %}

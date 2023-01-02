@@ -1,6 +1,6 @@
 html {
-  background-color: #292c3b;
-  color: #E2E2E5;
+  background-color: #1f2937;
+  color: #fff;
   color-scheme: dark;
   font-family: ui-monospace,
                "SF Mono",
@@ -20,20 +20,20 @@ html {
   }
 }
 
-main {
+body {
+  max-width: 42em;
+  padding: 3em 0.75em 4em;
   margin: 0 auto;
-  max-width: 700px;
-  padding-block-start: 2em;
 }
 
 footer {
-  margin: 2em auto;
+  margin: 0 auto;
   max-width: 700px;
-  padding-block-start: 1em;
+  padding: 2em 0 0;
 }
 
 a {
-  color: #8BCEFF;
+  color: #93c5fd;
   line-height: 1.5;
 }
 
@@ -43,16 +43,16 @@ a:hover {
 
 p {
   line-height: 1.5;
-  margin-block-start: 2em;
-  margin-block-end: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 h1 {
-  margin-block-start: 1.3em;
+  margin-top: 1.3em;
 }
 
 h2 {
-  margin-block-start: 1.83em;
+  margin-top: 1.83em;
 }
 
 ul {

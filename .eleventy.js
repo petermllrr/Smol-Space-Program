@@ -43,6 +43,7 @@ const filters = {
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/favicon-32x32.png");
+  eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addNunjucksAsyncShortcode("image", shortcodes.image);
   eleventyConfig.addLiquidShortcode("image", shortcodes.image);

@@ -9,7 +9,7 @@ gallery: orion
 
 <h1>{{ title }}</h1>
 
-<p>Peter Müller, {{ page.date | format }}</p>
+<p>Peter Müller, {{ page.date | formatDate }}</p>
 
 {% image "src/images/orion/PXL_20220319_114901965.jpg", "Fully assembled ORION model" %}
 

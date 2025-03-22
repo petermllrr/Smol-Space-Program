@@ -9,7 +9,7 @@ gallery: "smolsat"
 
 <h1>{{title}}</h1>
 
-<p>Peter Müller, {{ page.date | format }}</p>
+<p>Peter Müller, {{ page.date | formatDate }}</p>
 
 {% image "src/images/smolsat_1/PXL_20220212_142420014.PORTRAIT.jpg", "smolsat_1 completely assembled" %}
 

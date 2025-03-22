@@ -31,13 +31,22 @@ const shortcodes = {
 }
 
 const filters = {
-  format: function(date) {
+  formatDate: function(date) {
     return new Intl.DateTimeFormat(
       'en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
       }).format(new Date(date));
+  },
+  formatYear: function(date) {
+    return new Intl.DateTimeFormat(
+      'en-US', {
+        year: 'numeric'
+      }).format(new Date(date));
+  },
+  isoDate: function(date) {
+    return new Date(date).toISOString().split('T')[0]; // Returns YYYY-MM-DD format
   }
 }
 
@@ -47,7 +56,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addNunjucksAsyncShortcode("image", shortcodes.image);
   eleventyConfig.addLiquidShortcode("image", shortcodes.image);
-  eleventyConfig.addFilter("format", filters.format);
+  eleventyConfig.addFilter("formatDate", filters.formatDate);
+  eleventyConfig.addFilter("formatYear", filters.formatYear);
+  eleventyConfig.addFilter("isoDate", filters.isoDate);
 
   return {
     dir: {

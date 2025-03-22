@@ -1,6 +1,6 @@
 <footer>
     --<br>
-    Peter Müller © <time datetime="{{ now.year }}">{{ now.year }}</time> - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>
+    Peter Müller © <time datetime="{{ lastUpdated | isoDate }}">{{ lastUpdated | formatYear }}</time> - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>
     <br>
-    Last updated: <time datetime="{{ now.yyyymmdd }}">{{ now.formatted }}</time> - <a href="https://github.com/petermllrr/smolspaceprogram.com">GitHub</a>
+    Last updated: <time datetime="{{ lastUpdated | isoDate }}">{{ lastUpdated | formatDate }}</time> - <a href="https://github.com/petermllrr/smolspaceprogram.com">GitHub</a>
 </footer>

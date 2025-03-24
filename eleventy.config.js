@@ -1,6 +1,6 @@
-const Image = require("@11ty/eleventy-img");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const path = require("path");
+import Image from "@11ty/eleventy-img";
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import path from "path";
 
 const shortcodes = {
   image: async function(src, alt, sizes = "(max-width: 669px) 100vw, (min-width: 670) 670px", widths = [700, 1400, 4032]) {
@@ -50,7 +50,7 @@ const filters = {
   }
 }
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/favicon-32x32.png");
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -62,7 +62,7 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: {
-      input: "src"
-    }
-  }
-};
+      input: "src",
+    },
+  };
+}
